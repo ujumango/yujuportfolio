@@ -113,6 +113,9 @@ methods: {
     console.log(scrollY);
     //  console.log(e.deltaY)
     //deltaY는 100씩 움직인다
+    if(scrollY < 1180 ){
+      zoomOut.style.position = 'absolute'
+    }
      if(scrollY > 1180 && scrollY < 3500){
         window.addEventListener("wheel", function(e) {
         zoomOut.style.transform = `scale(${(0.4)})`;
@@ -131,18 +134,18 @@ methods: {
   }else {
          zoomOut.style.opacity = '0'
             zoomOut.style.top = '35%'
-       zoomOut.style.position = 'absolute'
+      //  zoomOut.style.position = 'absolute'
       zoomOut.classList.remove('active')
   }
   
   
   
   
-  if(scrollY > 1900  && scrollY < 3600){
+  if(scrollY > 1800  && scrollY < 3600){
         zoomOut.style.opacity = '0'
-       zoomOut.style.position = 'absolute'
+      //  zoomOut.style.position = 'absolute'
       zoomOut.classList.remove('active')
-      zoomOut.style.top = '35%'
+      // zoomOut.style.top = '35%'
     zoomOut.style.transition = `all 0.5s`
   }else{
         zoomOut.style.opacity = '1'
@@ -150,14 +153,15 @@ methods: {
     
   }
 
-  if(scrollY > 3600 && scrollY < 3900){
+  if(scrollY > 3400 && scrollY < 3800){
    zoomOut.style.transform =  `scale(${(out)})`;
      zoomOut.style.position = 'fixed'
+        zoomOut.style.opacity = '1'
        zoomOut.style.transition = `all 0.5s`
-   }else if(scrollY >= 3900 && scrollY <= 4200){
+   }else if(scrollY >= 3800 && scrollY < 4000){
    zoomOut.style.opacity = '0'
    zoomOut.style.transition = `all 0.5s`
-  }else if(scrollY > 4200){
+  }else if(scrollY > 4000){
    zoomOut.style.opacity = '0'
    zoomOut.style.position = 'absolute'
    zoomOut.style.top = '35%'
@@ -180,7 +184,7 @@ methods: {
 <style scoped>
 #about{
   width: 100%;
-  padding-bottom: 15%;
+  padding-bottom: 10%;
 /* height: 100vh; */
   /* overflow: hidden; */
 

@@ -55,9 +55,14 @@ nav{
 nav .hambergers{
   position: fixed;
     z-index: 3;
-  top: 5%; right: 5%;
+  top: 5%; right: 3.5%;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s;
+}
+nav.active .hambergers{
+right: 5%;
+transition: all 0.3s;
 }
 nav .gnbBg{
   position:fixed;
@@ -118,7 +123,7 @@ nav .gnbSide{
   background-color: #0C0C0C;
 }
 nav .gnbSide ul{
-padding-top: 30%;
+padding-top: 40%;
 padding-right: 20%;
 opacity: 1;
 display: flex;
