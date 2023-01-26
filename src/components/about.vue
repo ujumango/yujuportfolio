@@ -4,7 +4,7 @@
       <div class="aboutWrap">
        <span :style="{paddingRight:'15px'},{fontSize:'96px'}">[</span>
       <span>
-        <h1 :style="{display:'inline-block'}" class="text" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1200"> 
+        <h1 :style="{display:'inline-block'}" class="text" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1200"> 
       자신이 <span class="underline">물음표</span>를 가지는 일에<br>
       <span class="underbar">마침표를 찍을 수 있는 사람</span>
       </h1>
@@ -38,21 +38,28 @@
       <div></div>
       </div>
     <div class="sec3_cont">
-      <div class="sec3_coding">
+      <div class="sec3_coding" data-aos="fade-up" data-aos-delay="50"  data-aos-duration="1200">
         <h2>CODING SKILLS</h2>
         <ul>
-          <li v-for="image in icons">
+          <li v-for="image in iconS">
             <div>
                <img :src="require(`@/assets/skills/${image.img}`)" /> </div>
               <p>{{ image.name }}</p></li>
         </ul>
       </div>
-      <div class="sec3_design">
+      <div class="sec3_design" data-aos="fade-up" data-aos-delay="200"  data-aos-duration="1200">
         <h2>DESIGN SKILLS</h2>
+        <ul>
+          <li v-for="image in iconD">
+            <div>
+               <img :src="require(`@/assets/skills/${image.img}`)" /> </div>
+              <p>{{ image.name }}</p></li>
+        </ul>
       </div>
     </div>
   
     </div>
+    <div id="about_sec4"></div>
    
       
   </section>
@@ -63,22 +70,29 @@
 export default {
   data(){
     return{
-      icons : [
-        {img : 'checked.png', name : '체크박스'},
-          {img : 'check.png', name : '체크'},
-          {img : 'check-box.png', name : '체크된박스'},
-           {img : 'heart.png', name : '하트'},
-           {img : 'heart-colored.png', name : '색칠된하트'}
-      
-      
-      
+      iconS : [
+        {img : 'html_wht.png', name : 'HTML'},
+          {img : 'css_wht.png', name : 'CSS'},
+          {img : 'js_wht.png', name : 'JavaScript'},
+           {img : 'nodejs_wht.png', name : 'Node.js'},
+           {img : 'mysql_wht.png', name : 'MySQL'},
+           {img : 'vue_wht.png', name : 'Vue.js'},
+           {img : 'git_wht.png', name : 'Git'},
+           {img : 'github_wht.png', name : 'GitHub'},
+      ],      
+      iconD : [
+        {img : 'psd_wht.png', name : 'Photoshop'},
+          {img : 'ai_wht.png', name : 'Illustrator'},
+          {img : 'figma_wht.png', name : 'Figma'},
       ]
     }
   },
 mounted() {
      window.addEventListener('scroll',this.scrllAbout)
   },
-  methods: {
+
+  
+methods: {
     scrllAbout(){
       
     const about = document.querySelector('#about');
@@ -96,42 +110,66 @@ mounted() {
     const circlrWrap = document.querySelector('.sec3_circle')
     // console.log(about);
     // console.log(aboutTop);
-    // console.log(scrollY);
+    console.log(scrollY);
     //  console.log(e.deltaY)
     //deltaY는 100씩 움직인다
      if(scrollY > 1180 && scrollY < 3500){
         window.addEventListener("wheel", function(e) {
         zoomOut.style.transform = `scale(${(0.4)})`;
         zoomOut.style.transition = `all 0.5s`
-
         // e.preventDefault();
  })  
   }else{
         zoomOut.style.transform =  `scale(${(out)})`;
         zoomOut.style.transition = `all 0.5s`
       }
-  if(scrollY > 1200 && scrollY < 3500){
+  if(scrollY > 1200 && scrollY < 1800){
         zoomOut.style.position = 'fixed'
         zoomOut.classList.add('active')
+         zoomOut.style.top = '0'
 
-  }else{
-     zoomOut.style.position = 'unset'
+  }else {
+         zoomOut.style.opacity = '0'
+            zoomOut.style.top = '35%'
+       zoomOut.style.position = 'absolute'
       zoomOut.classList.remove('active')
-      
   }
-  if(scrollY >= 1800){
-    zoomOut.style.opacity = '0'
+  
+  
+  
+  
+  if(scrollY > 1900  && scrollY < 3600){
+        zoomOut.style.opacity = '0'
+       zoomOut.style.position = 'absolute'
+      zoomOut.classList.remove('active')
+      zoomOut.style.top = '35%'
     zoomOut.style.transition = `all 0.5s`
   }else{
         zoomOut.style.opacity = '1'
     zoomOut.style.transition = `all 0.5s`
+    
+  }
+
+  if(scrollY > 3600 && scrollY < 3900){
+   zoomOut.style.transform =  `scale(${(out)})`;
+     zoomOut.style.position = 'fixed'
+       zoomOut.style.transition = `all 0.5s`
+   }else if(scrollY >= 3900 && scrollY <= 4200){
+   zoomOut.style.opacity = '0'
+   zoomOut.style.transition = `all 0.5s`
+  }else if(scrollY > 4200){
+   zoomOut.style.opacity = '0'
+   zoomOut.style.position = 'absolute'
+   zoomOut.style.top = '35%'
   }
   
-  if(scrollY >= 2700){
+  if(scrollY >= 2500){
     circlrWrap.classList.add('active')
   }else{
     circlrWrap.classList.remove('active')
   }
+  
+  
   }
 },
 }
@@ -142,32 +180,37 @@ mounted() {
 <style scoped>
 #about{
   width: 100%;
-  padding: 50px 0;
-  overflow: hidden;
+  padding-bottom: 15%;
+/* height: 100vh; */
+  /* overflow: hidden; */
 
 }
   #about #about_sec1{
-     margin: 0 auto;
+    position: relative;
     width:100%;
     /* height: 100vh; */
     color: #F6F6F6;
-    padding: 18% 0;
+    margin: 0 auto;
+    padding: 20% 0;
+    box-sizing: border-box;
+
+    
 
   }
-
-
+  #about #about_sec1  .aboutWrap{
+    width: 100%; 
+    opacity: 1;
+  }
   #about #about_sec1  .aboutWrap span{
     display: inline-block; 
   }
+  
   #about #about_sec1 .aboutWrap.active{
-    /* position: fixed; */
-    width: 100%;
-    top: -38px;
-    transition: all 1s;
- 
- 
+    width: 100%; 
+    top: 0; 
+    transition: all 0.5s;
   }
-  #about .underbar::after{
+.underbar::after{
    display: block;
   content: '';
   height: 13px;
@@ -197,7 +240,7 @@ mounted() {
   height: 100vh;
   display: flex;
   justify-content: space-between;
-  padding-top: 10%;
+  padding-top: 20%;
   padding-bottom: 5%;
   /* background-color: #303030; */
 } 
@@ -248,6 +291,8 @@ mounted() {
 }
 #about #about_sec3{
   width: 100%; height: 100vh;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 #about #about_sec3 .sec3_circle{
   display: flex;
@@ -322,34 +367,86 @@ animation-fill-mode: forwards;
 
 #about .sec3_cont{
   display: flex;
-  justify-content: space-between;
   position: relative;
+  justify-content: space-between;
   top: -20%;
 }
 #about .sec3_coding{
   width:45%;
 }
 #about .sec3_coding ul{
+  width: 80%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-top: 15%;
-  gap: 50px;
+  padding-top: 10%;
+
+  gap: 10%;
+  margin: 0 auto;
 }
 #about .sec3_coding ul li{
-  width: calc((90% - 100px) /3) ;
+  width: calc((80% - 90px) /4);
+  padding-top: 10%;
+  text-align: center;
+}
+#about .sec3_cont h2{
+ display: inline-block;
+}
+#about .sec3_coding h2::after{
+  display: block;
+  content: '';
+  height: 13px;
+  width: 0%;
+  background-color: #2152FF;
+  animation: underbar 2s ease-in-out;
+  animation-delay: 2s;
+  animation-fill-mode:forwards;
 }
 #about .sec3_coding ul li p{
-  padding-top: 20px;
+  padding-top: 10px;
   font-size: 20px;
 }
-#about .sec3_coding ul li img{
+#about .sec3_cont ul li img{
   display: block;
   box-sizing: border-box;
   width: 100%;
 }
 #about .sec3_design{
   width:45%;
+}
+#about .sec3_design ul{
+  width: 80%;
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+  padding-top: 10%;
+  padding-left: 10%;
+  gap: 10%;
+  margin: 0 auto;
+
+}
+#about .sec3_design ul li{
+  width: calc((80% - 90px) /4);
+  padding-top: 10%;
+    text-align: center;
+}
+#about .sec3_design ul li p{
+  padding-top: 10px;
+  font-size: 20px;
+}
+#about .sec3_design h2::after{
+  display: block;
+  content: '';
+  height: 13px;
+  width: 0%;
+  background-color: #9AEF58;
+  animation: underbar 2s ease-in-out;
+  animation-delay: 2s;
+  animation-fill-mode:forwards;
+}
+#about #about_sec4{
+  width: 100%;
+  height: 100vh;
 }
 </style>
 

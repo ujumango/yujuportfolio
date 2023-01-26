@@ -1,21 +1,35 @@
 <template>
-<section id="project">
- <h1 id="h1_project">project page</h1>
-  <div></div>
+<section id="project" class="fixH">
+  <div class="project_wrap sectionP">
+    <div class="pjt_left">
+      <h1>[ Project ]</h1>
+    </div>
+    <div class="pjt_right">
+      내용
+    </div>
+  </div>
 </section>
  
 </template>
-<style scoped>
-section{
 
+<script>
+export default {
+  
+}
+</script>
+
+<style scoped>
+#project{
   width: 100%;
   height: 100vh;
-  padding: 50px 0;
+}
+#project .project_wrap{
+  display: flex;
+}
+#project .project_wrap .pjt_left{
+  width: 30%;
+  transform: scale(-1);
+   writing-mode:vertical-rl;
+}
 
-}
-div{
-  widows: 100%;
-  height: 100vh;
-  background-color: rgb(122, 103, 204);
-}
 </style>

@@ -40,14 +40,14 @@ export default {
   methods: {
     onScroll(){
       const sections = document.querySelectorAll('section[id]');
-      const scrollY = window.pageYOffset;
+      const scrollYs = window.pageYOffset;
 
       for(var i=0; i<sections.length; i++){
-        const sectionHeight = sections[i].offsetHeight;
-        const sectionTop = sections[i].offsetTop - 50;
+        const sectionHeights = sections[i].offsetHeight;
+        const sectionTops = sections[i].offsetTop - 50;
         let navName = document.querySelectorAll('.gotosec');
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+        if(scrollYs > sectionTops && scrollYs <= sectionTops + sectionHeights){
           for(let i=0; i<navName.length; i++){
             navName[i].classList.remove('active');
           }
