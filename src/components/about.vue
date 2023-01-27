@@ -59,7 +59,19 @@
     </div>
   
     </div>
-    <div id="about_sec4"></div>
+    <div id="about_sec4">
+            <div class="aboutWrap">
+       <span :style="{paddingRight:'15px'},{fontSize:'96px'}">[</span>
+      <span>
+        <h1 :style="{display:'inline-block'}" class="text" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1200"> 
+      자신이 <span class="underline">물음표</span>를 가지는 일에<br>
+      <span class="underbar">마침표를 찍을 수 있는 사람</span>
+      </h1>
+      
+      </span>
+      <span :style="{paddingLeft:'15px'},{fontSize:'96px'}">]</span>
+    </div>
+    </div>
    
       
   </section>
@@ -67,6 +79,8 @@
 </template>
 
 <script>
+import {onMounted} from 'vue'
+
 export default {
   data(){
     return{
@@ -90,8 +104,6 @@ export default {
 mounted() {
      window.addEventListener('scroll',this.scrllAbout)
   },
-
-  
 methods: {
     scrllAbout(){
       
@@ -116,7 +128,7 @@ methods: {
     if(scrollY < 1180 ){
       zoomOut.style.position = 'absolute'
     }
-     if(scrollY > 1180 && scrollY < 3500){
+     if(scrollY >= 1180 && scrollY < 2500){
         window.addEventListener("wheel", function(e) {
         zoomOut.style.transform = `scale(${(0.4)})`;
         zoomOut.style.transition = `all 0.5s`
@@ -126,22 +138,19 @@ methods: {
         zoomOut.style.transform =  `scale(${(out)})`;
         zoomOut.style.transition = `all 0.5s`
       }
-  if(scrollY > 1200 && scrollY < 1800){
+  if(scrollY > 1200 && scrollY < 1690){
         zoomOut.style.position = 'fixed'
         zoomOut.classList.add('active')
          zoomOut.style.top = '0'
 
   }else {
          zoomOut.style.opacity = '0'
-            zoomOut.style.top = '35%'
+            zoomOut.style.top = '40%'
       //  zoomOut.style.position = 'absolute'
       zoomOut.classList.remove('active')
   }
   
-  
-  
-  
-  if(scrollY > 1800  && scrollY < 3600){
+  if(scrollY > 1690  && scrollY < 3600){
         zoomOut.style.opacity = '0'
       //  zoomOut.style.position = 'absolute'
       zoomOut.classList.remove('active')
@@ -154,17 +163,16 @@ methods: {
   }
 
   if(scrollY > 3400 && scrollY < 3800){
-   zoomOut.style.transform =  `scale(${(out)})`;
-     zoomOut.style.position = 'fixed'
-        zoomOut.style.opacity = '1'
-       zoomOut.style.transition = `all 0.5s`
-   }else if(scrollY >= 3800 && scrollY < 4000){
-   zoomOut.style.opacity = '0'
+    zoomOut.style.opacity = '0'
    zoomOut.style.transition = `all 0.5s`
-  }else if(scrollY > 4000){
+   
+  }else if(scrollY >= 3800){
    zoomOut.style.opacity = '0'
-   zoomOut.style.position = 'absolute'
-   zoomOut.style.top = '35%'
+  //  zoomOut.style.position = 'absolute'
+   zoomOut.style.display = 'none'
+   zoomOut.style.top = '40%'
+  }else{
+    zoomOut.style.display = 'block'
   }
   
   if(scrollY >= 2500){
@@ -172,10 +180,22 @@ methods: {
   }else{
     circlrWrap.classList.remove('active')
   }
-  
-  
   }
 },
+setup(){
+  onMounted(()=>{
+      const sec2More = document.querySelector('.sec2_more')
+      sec2More.addEventListener('mouseenter',()=>{
+        sec2More.classList.add('active')
+      })
+      sec2More.addEventListener('mouseleave',()=>{
+        sec2More.classList.remove('active')
+      })
+  })
+
+
+  }
+
 }
 
 </script>
@@ -205,7 +225,7 @@ methods: {
     width: 100%; 
     opacity: 1;
   }
-  #about #about_sec1  .aboutWrap span{
+  #about  .aboutWrap span{
     display: inline-block; 
   }
   
@@ -277,7 +297,7 @@ methods: {
   background-position: center center;
 }
 #about .sec2_more{
-  width: fit-content; height: 40px;
+  width: 30%; height: 40px;
   line-height: 40px;
   display: block;
   /* text-align: right; */
@@ -287,8 +307,13 @@ methods: {
   padding-top: 20px;
   background-image: url(../assets/common/resume.png);
   background-repeat: no-repeat;
-  background-position: bottom 30% right;
+  background-position: bottom 25% right 50px;
   background-size: 22px auto;
+  transition: all 0.3s ease-in-out;
+}
+#about .sec2_more.active{
+    background-position: bottom 25% right 40px;
+    transition: all 0.3s ease-in-out;
 }
 #about .sec2_more>a{
   display: block;
@@ -408,7 +433,7 @@ animation-fill-mode: forwards;
 }
 #about .sec3_coding ul li p{
   padding-top: 10px;
-  font-size: 20px;
+  font-size: 18px;
 }
 #about .sec3_cont ul li img{
   display: block;
@@ -451,6 +476,8 @@ animation-fill-mode: forwards;
 #about #about_sec4{
   width: 100%;
   height: 100vh;
+  padding: 20% 0;
+  box-sizing: border-box;
 }
 </style>
 
