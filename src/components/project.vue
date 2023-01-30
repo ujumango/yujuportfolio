@@ -6,7 +6,7 @@
     </div>
     <div class="pjt_right">
       <div class="pjt_cont_wrap">
-        <div class="pjt_cont_propa" data-aos="fade-up" data-aos-delay="100"  data-aos-duration="1200">
+        <div class="pjt_cont_propa" data-aos="fade-up" data-aos-delay="200"  data-aos-duration="1200">
           <div class="pjt_cont_img">
             <img src="../assets/project/propaganda2.png" alt="">
           </div>
@@ -82,10 +82,13 @@
             </div>
           </div>
         </div>
-        <div></div>
-        <div></div>
-        <div></div>
+   
       </div>
+    </div>
+  </div>
+  <div class="project_bnr">
+    <div class="bjt_bnr_wrap">
+      <span class="h1txt">[</span><h1>발전</h1><span class="h1txt">]</span><h1 class="normalTxt">하는</h1> <h1>프론트엔드</h1><h1 class="normalTxt">개발자</h1>
     </div>
   </div>
 </section>
@@ -116,6 +119,7 @@ export default {
 </script>
 
 <style scoped>
+
 #project{
   width: 100%;
   height: auto;
@@ -258,6 +262,32 @@ export default {
 }
 #project .pjt_cont_wrap .pjt_cont_team{
   padding-top: 15%;
+}
+#project .project_bnr{
+  width:100%;
+  height: 100vh;
+  position: relative;
+  background-image: url(../assets/space-bnr.png);
+  padding-top: 5%;
+  margin-top: 15%;
+}
+#project .bjt_bnr_wrap{
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#project .normalTxt{
+  font-weight: 300;
+}
+#project .h1txt{
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+#project .project_bnr h1{
+  display: inline-block;
+  padding-right: 20px;
 }
 
 </style>

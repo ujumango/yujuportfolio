@@ -69,10 +69,11 @@ nav .gnbBg{
   width:100%; height: 100vh;
   background-color: #0C0C0C80;
   opacity: 0;
-  z-index: 2;
+  z-index: 0;
   transition: opacity 0.3s ease-in-out;
 }
 nav.active .gnbBg{
+  z-index: 2;
   opacity: 1;
    transition: opacity 0.3s ease-in-out;
 }

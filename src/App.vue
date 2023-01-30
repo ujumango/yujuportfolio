@@ -70,7 +70,19 @@ export default {
   /* margin-top: 60px; */
   /* cursor: url(./assets/cursor.png),auto; */
 }
-/* #app li{
-  cursor: url(./assets/cursor-2.png),auto;
-} */
+html::-webkit-scrollbar {
+  border: 1px solid #F6F6F6;
+}
+html::-webkit-scrollbar-thumb {
+  /* background-color: #0c0c0c; */
+  background-color: #8FE948;
+  
+}
+html::-webkit-scrollbar-track {
+  background-color: #1b1b1b;
+  /* border-left: 1px solid #F6F6F650; */
+}
+html::-webkit-scrollbar-thumb:window-inactive {
+    background: #2152FF; 
+}
 </style>

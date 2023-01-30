@@ -60,8 +60,8 @@
   
     </div>
     <div id="about_sec4">
-            <div class="aboutWrap">
-       <span :style="{paddingRight:'15px'},{fontSize:'96px'}">[</span>
+      <div class="aboutWrap">
+       <span class="h1txt">[</span>
       <span>
         <h1 :style="{display:'inline-block'}" class="text" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1200"> 
       자신이 <span class="underline">물음표</span>를 가지는 일에<br>
@@ -69,7 +69,7 @@
       </h1>
       
       </span>
-      <span :style="{paddingLeft:'15px'},{fontSize:'96px'}">]</span>
+      <span class="h1txt">]</span>
     </div>
     </div>
    
