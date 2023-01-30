@@ -1,23 +1,24 @@
 <template>
   <nav>
-      <div @click="subMenu" class="hambergers">      
+      <div :class="{ active : subMenu }" @click="subMenu =! subMenu" class="hambergers">      
       <span class="hamberger"></span>
       <span class="hamberger"></span>
       <span class="hamberger"></span>
       </div>
     <!-- <div class="gnbBg"></div> -->
     <!-- 나중에 다시 살려야 함!! 배경!! -->
-    <div class="gnbWrap">
+    <div :class="{ active : subMenu }" class="gnbWrap">
 
       <div class="gnbSide">
        <ul class="gnb">
-      <li v-on:click="goSection" data-target="intro" class="gotosec active">Intro</li>
-      <li v-on:click="goSection" data-target="about" class="gotosec">About</li>
-      <li v-on:click="goSection" data-target="project" class="gotosec">Project</li>
-      <li v-on:click="goSection" data-target="toyproject" class="gotosec">toyproject</li>
-      <li v-on:click="goSection" data-target="cloning" class="gotosec">Cloning</li>
-      <li v-on:click="goSection" data-target="contact" class="gotosec">Contact</li>
+      <li v-on:click="goSection" data-target="intro" class="gotosec active">INTRO</li>
+      <li v-on:click="goSection" data-target="about" class="gotosec">ABOUT</li>
+      <li v-on:click="goSection" data-target="project" class="gotosec">PROJECT</li>
+      <li v-on:click="goSection" data-target="toyproject" class="gotosec">JAVASCRIPT</li>
+      <li v-on:click="goSection" data-target="cloning" class="gotosec">CLONING</li>
+      <li v-on:click="goSection" data-target="contact" class="gotosec">CONTACT</li>
     </ul>
+    <div id="turnDiv" :class="{ active : turnMode }"  @click="turnMode =! turnMode">LIGHT MODE</div>
     </div>
     </div>
     
@@ -27,7 +28,14 @@
   </nav>
 </template>
 <script>
+
 export default {
+  data(){
+    return{
+      subMenu : false,
+      turnMode :false
+    }
+  },
   methods: {
     goSection(e){
       if(!e.target.matches('.gotosec')) return;
@@ -39,13 +47,12 @@ export default {
         sec.scrollIntoView({ behavior : "smooth"})
       }
     },
-    subMenu : function(){
-      let nav = document.querySelector('nav');
-      nav.classList.toggle('active')
+ 
     }
 
-  },
-}
+
+
+  }
 </script>
 <style scoped>
 nav{
@@ -61,7 +68,7 @@ nav .hambergers{
   flex-direction: column;
   transition: all 0.3s;
 }
-nav.active .hambergers{
+nav .hambergers.active{
 right: 5%;
 transition: all 0.3s;
 }
@@ -73,7 +80,7 @@ nav .gnbBg{
   z-index: -1;
   transition: opacity 0.3s ease-in-out;
 }
-nav.active .gnbBg{
+nav .gnbBg.active{
   z-index: 1;
   opacity: 1;
    transition: opacity 0.3s ease-in-out;
@@ -89,7 +96,7 @@ nav .gnbWrap{
   text-align:end;
    transition: all 0.7s ease-in-out;
 }
-nav.active .gnbWrap{
+nav .gnbWrap.active{
     transition: all 0.3s ease-in-out;
     right: 0;
     opacity: 1;
@@ -103,16 +110,16 @@ nav .hambergers .hamberger{
   background-color: #F6F6F6;
   transition: all 0.5s ease-in-out;
 }
-nav.active .hambergers .hamberger:first-child{
+nav .hambergers.active .hamberger:first-child{
    -webkit-transform: translateY(5px) rotate(45deg);
     -ms-transform: translateY(5px) rotate(45deg);
     -o-transform: translateY(5px) rotate(45deg);
     transform: translateY(5px) rotate(45deg);
 }
-nav.active .hambergers .hamberger:nth-child(2){
+nav .hambergers.active .hamberger:nth-child(2){
   display: none;
 }
-nav.active .hambergers .hamberger:last-child{
+nav .hambergers.active .hamberger:last-child{
   -webkit-transform: translateY(-10px) rotate(-45deg);
     -ms-transform: translateY(-10px) rotate(-45deg);
     -o-transform: translateY(-10px) rotate(-45deg);
@@ -121,12 +128,12 @@ nav.active .hambergers .hamberger:last-child{
 nav .gnbSide{
   position: absolute;
   right: 0; 
-  width:25%; height: 100vh;
+  width:30%; height: 100vh;
   box-shadow: -1px 0px 15px 0px #F6F6F630;
   background-color: #0C0C0C;
 }
 nav .gnbSide ul{
-padding-top: 30%;
+padding-top:35%;
 padding-right: 20%;
 opacity: 1;
 display: flex;
@@ -140,7 +147,7 @@ nav .gnbSide ul>li{
   display: inline-block;
   width:fit-content;
 
-  font-size: 54px;
+  font-size: 45px;
   /* padding: 30px 0; */
   cursor: pointer;
 }
@@ -160,6 +167,12 @@ nav .gotosec.active::after{
 @keyframes underbar{
     0% {width:0%;}
     100% {width: 100%;}
+}
+
+#turnDiv{
+  padding-right : 20%;
+  padding-top: 10%;
+
 }
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-<section id="project" class="fixH">
+<section id="project" class="fixH" :class="{ active : turnMode }">
   <div class="project_wrap sectionP">
     <div class="pjt_left">
       <h1>[ PROJECT ]</h1>

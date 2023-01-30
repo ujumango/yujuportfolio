@@ -170,11 +170,11 @@ display: inline-block;
   transition: 0.3s;
   font-size: 90px;
   font-weight: bold;
-  color: #0C0C0C80;
+  color: #D2D2D2;
    overflow: hidden;
 }
 #contact .flow_text:hover{
-  color:#2152FF;
+  color:#0C0C0C;
 }
 #contact .flow_text:hover .flow_wrap {
   animation-play-state: paused;

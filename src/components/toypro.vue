@@ -2,7 +2,7 @@
 <section id="toyproject" class="fixH">
     <div class="project_wrap sectionP">
     <div class="pjt_left">
-      <h1>[ TOY PROJECT ]</h1>
+      <h1>[ JAVASCRIPT ]</h1>
     </div>
     <div class="pjt_right">
       <div class="pjt_cont_wrap">

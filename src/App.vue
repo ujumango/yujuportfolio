@@ -1,6 +1,6 @@
 <template>
   <headerV  />
-  <intro id="intro"  />
+  <intro id="intro" />
   <about id="about"  />
   <project id="project"  />
   <toyproject id="toyproject"  />
@@ -57,8 +57,15 @@ export default {
           navName[i].classList.add('active');
         }
       }
-    }
+    },
+    
+
   },
+  data(){
+    return{
+      
+    }
+  }
 }
 </script>
 
@@ -74,6 +81,10 @@ export default {
 
   /* margin-top: 60px; */
   /* cursor: url(./assets/cursor.png),auto; */
+}
+#app.active {
+    color: #0C0C0C;
+   background-color: #F6F6F6;
 }
 html::-webkit-scrollbar {
   border: 1px solid #F6F6F6;

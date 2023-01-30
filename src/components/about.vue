@@ -307,12 +307,12 @@ setup(){
   padding-top: 20px;
   background-image: url(../assets/common/resume.png);
   background-repeat: no-repeat;
-  background-position: bottom 25% right 50px;
+  background-position: bottom 25% right 30px;
   background-size: 22px auto;
   transition: all 0.3s ease-in-out;
 }
 #about .sec2_more.active{
-    background-position: bottom 25% right 40px;
+    background-position: bottom 25% right 20px;
     transition: all 0.3s ease-in-out;
 }
 #about .sec2_more>a{
