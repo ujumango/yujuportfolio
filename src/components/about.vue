@@ -63,7 +63,7 @@
       <div class="aboutWrap">
        <span class="h1txt">[</span>
       <span>
-        <h1 :style="{display:'inline-block'}" class="text" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1200"> 
+        <h1 :style="{display:'inline-block'}" class="text" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"> 
       자신이 <span class="underline">물음표</span>를 가지는 일에<br>
       <span class="underbar">마침표를 찍을 수 있는 사람</span>
       </h1>

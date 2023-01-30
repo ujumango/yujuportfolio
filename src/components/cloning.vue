@@ -6,7 +6,7 @@
     </div>
     <div class="pjt_right">
       <div class="pjt_cont_wrap">
-       <div class="cloning_cont_dosirak"  data-aos="fade-up" data-aos-delay="300"  data-aos-duration="700">
+       <div class="cloning_cont_dosirak"  data-aos="fade-up"   data-aos-duration="700">
         <div class="cloning_cont_img">
           <img src="../assets/cloning/dosirak.png" alt="">
              <div class="pjt_cont_txt">
@@ -25,7 +25,7 @@
           </div>
            </div>
        </div>
-       <div class="cloning_cont_greenhome"  data-aos="fade-up" data-aos-delay="300"  data-aos-duration="700">
+       <div class="cloning_cont_greenhome"  data-aos="fade-up"   data-aos-duration="1000">
          <div class="cloning_cont_img">
                <img src="../assets/cloning/greenhome.png" alt="">
              <div class="pjt_cont_txt">
@@ -43,7 +43,7 @@
           </div>
          </div>
        </div>
-       <div class="cloning_cont_richmond"  data-aos="fade-up" data-aos-delay="300"  data-aos-duration="700">
+       <div class="cloning_cont_richmond"  data-aos="fade-up"  data-aos-duration="1200">
          <div class="cloning_cont_img">
           <img src="../assets/cloning/richmond.png" alt="therichmond">
              <div class="pjt_cont_txt">
