@@ -93,6 +93,9 @@ setInterval(blink, 500) //blink 함수를 0.5초마다 실행
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.35)), url(../assets/space-main.jpg) center/cover no-repeat;
 }
 
+#intro h1{
+  line-height: 1.3;
+}
 
 .intro_wrap{
   color: #F6F6F6;

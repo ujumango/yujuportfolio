@@ -3,6 +3,7 @@
   <intro id="intro"  />
   <about id="about"  />
   <project id="project"  />
+  <toyproject id="toyproject"  />
   <cloning id="cloning"  />
   <contact id="contact"  />
 </template>
@@ -12,6 +13,7 @@ import headerV from './components/headerV.vue'
 import intro from './components/intro.vue'
 import about from './components/about.vue'
 import project from './components/project.vue'
+import toyproject from './components/toypro.vue'
 import cloning from './components/cloning.vue'
 import contact from './components/contact.vue'
 
@@ -27,6 +29,7 @@ export default {
     intro,
     about,
     project,
+    toyproject,
     cloning,
     contact,
     AOS,
@@ -44,7 +47,7 @@ export default {
 
       for(var i=0; i<sections.length; i++){
         const sectionHeights = sections[i].offsetHeight;
-        const sectionTops = sections[i].offsetTop - 50;
+        const sectionTops = sections[i].offsetTop - 40;
         let navName = document.querySelectorAll('.gotosec');
 
         if(scrollYs > sectionTops && scrollYs <= sectionTops + sectionHeights){
@@ -66,7 +69,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #F6F6F6;
-  background-color: #0C0C0C;
+   background-color: #0C0C0C;
+ 
+
   /* margin-top: 60px; */
   /* cursor: url(./assets/cursor.png),auto; */
 }
@@ -78,6 +83,7 @@ html::-webkit-scrollbar-thumb {
   background-color: #8FE948;
   
 }
+
 html::-webkit-scrollbar-track {
   background-color: #1b1b1b;
   /* border-left: 1px solid #F6F6F650; */

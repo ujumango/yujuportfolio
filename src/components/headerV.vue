@@ -14,6 +14,7 @@
       <li v-on:click="goSection" data-target="intro" class="gotosec active">Intro</li>
       <li v-on:click="goSection" data-target="about" class="gotosec">About</li>
       <li v-on:click="goSection" data-target="project" class="gotosec">Project</li>
+      <li v-on:click="goSection" data-target="toyproject" class="gotosec">toyproject</li>
       <li v-on:click="goSection" data-target="cloning" class="gotosec">Cloning</li>
       <li v-on:click="goSection" data-target="contact" class="gotosec">Contact</li>
     </ul>
@@ -69,17 +70,17 @@ nav .gnbBg{
   width:100%; height: 100vh;
   background-color: #0C0C0C80;
   opacity: 0;
-  z-index: 0;
+  z-index: -1;
   transition: opacity 0.3s ease-in-out;
 }
 nav.active .gnbBg{
-  z-index: 2;
+  z-index: 1;
   opacity: 1;
    transition: opacity 0.3s ease-in-out;
 }
 nav .gnbWrap{
   position: fixed;
-  z-index: 2;
+  z-index: 1;
   top: 0;
   right: -100%;
   display: flex;
@@ -92,6 +93,7 @@ nav.active .gnbWrap{
     transition: all 0.3s ease-in-out;
     right: 0;
     opacity: 1;
+      z-index: 1;
 }
 
 nav .hambergers .hamberger{
@@ -124,7 +126,7 @@ nav .gnbSide{
   background-color: #0C0C0C;
 }
 nav .gnbSide ul{
-padding-top: 40%;
+padding-top: 30%;
 padding-right: 20%;
 opacity: 1;
 display: flex;

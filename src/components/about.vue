@@ -204,7 +204,7 @@ setup(){
 <style scoped>
 #about{
   width: 100%;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
 /* height: 100vh; */
   /* overflow: hidden; */
 
