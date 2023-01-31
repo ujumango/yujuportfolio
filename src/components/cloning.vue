@@ -74,6 +74,14 @@
   height: auto;
   min-height: 100vh;
 }
+#cloning.active{
+  background-color: #f6f6f6;
+  color: #0c0c0c;
+}
+#cloning .darkmode{
+  background-color: #f6f6f6;
+  color: #0c0c0c;
+}
 #cloning .cloning_cont_img{
    width: 100%;
   height: auto;
@@ -96,5 +104,6 @@
   border: none;
   padding-top: 0;
 }
+
 
 </style>

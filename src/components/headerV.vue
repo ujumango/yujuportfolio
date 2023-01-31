@@ -1,6 +1,6 @@
 <template>
-  <nav>
-      <div :class="{ active : subMenu }" @click="subMenu =! subMenu" class="hambergers">      
+  <nav :class="{ active : turnMode }">
+      <div :class="{ active : subMenu }" @click="subMenu = ! subMenu" class="hambergers">      
       <span class="hamberger"></span>
       <span class="hamberger"></span>
       <span class="hamberger"></span>
@@ -18,7 +18,6 @@
       <li v-on:click="goSection" data-target="cloning" class="gotosec">CLONING</li>
       <li v-on:click="goSection" data-target="contact" class="gotosec">CONTACT</li>
     </ul>
-    <div id="turnDiv" :class="{ active : turnMode }"  @click="turnMode =! turnMode">LIGHT MODE</div>
     </div>
     </div>
     
@@ -28,14 +27,21 @@
   </nav>
 </template>
 <script>
-
+import {onMounted} from 'vue'
 export default {
   data(){
     return{
       subMenu : false,
-      turnMode :false
+      lightMode : true,
+      
     }
   },
+  setup(){
+    onMounted(()=>{
+
+   
+    })
+      },
   methods: {
     goSection(e){
       if(!e.target.matches('.gotosec')) return;
@@ -47,12 +53,14 @@ export default {
         sec.scrollIntoView({ behavior : "smooth"})
       }
     },
- 
+    
+    },
+    
+   
     }
 
 
-
-  }
+  
 </script>
 <style scoped>
 nav{
@@ -110,6 +118,13 @@ nav .hambergers .hamberger{
   background-color: #F6F6F6;
   transition: all 0.5s ease-in-out;
 }
+
+nav.darkmode .hambergers .hamberger{
+    background-color: #0c0c0c;
+}
+ .hambergers .hamberger.contDark{
+      background-color: #0c0c0c;
+ }
 nav .hambergers.active .hamberger:first-child{
    -webkit-transform: translateY(5px) rotate(45deg);
     -ms-transform: translateY(5px) rotate(45deg);
@@ -140,7 +155,6 @@ display: flex;
 color: #F6F6F6;
 flex-direction: column;
 align-items: flex-end;
-
 }
 
 nav .gnbSide ul>li{
@@ -150,6 +164,15 @@ nav .gnbSide ul>li{
   font-size: 45px;
   /* padding: 30px 0; */
   cursor: pointer;
+}
+
+nav.darkmode .gnbSide, .contDark.gnbSide{
+  background-color: #F6F6F6;
+  box-shadow: -1px 0px 15px 0px #0C0C0C60;
+}
+nav.darkmode .gnbSide ul, .contDark.gnbSide ul{
+  color: #0C0C0C;
+  font-weight: 500;
 }
 nav .gotosec::after{
   display: block;

@@ -1,4 +1,10 @@
 <template>
+<div class="modeBtn" @change="lightM()">
+  <input type="checkbox" id="modeL">
+<label for="modeL" class="modeLight">
+  <span class="modeHandle"></span>
+  </label></div>
+
   <headerV  />
   <intro id="intro" />
   <about id="about"  />
@@ -20,7 +26,7 @@ import contact from './components/contact.vue'
 //AOS
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-
+import {onMounted} from 'vue'
 
 export default {
   name: 'App',
@@ -40,7 +46,16 @@ export default {
   mounted(){
     window.addEventListener('scroll',this.onScroll)
   },
+    data(){
+    return{
+      lightMode : true
+    }
+  },
+  
+    
+    
   methods: {
+
     onScroll(){
       const sections = document.querySelectorAll('section[id]');
       const scrollYs = window.pageYOffset;
@@ -58,14 +73,30 @@ export default {
         }
       }
     },
-    
+    lightM(){
+     const modeL = document.querySelector('#modeL');
+     const sections = document.querySelectorAll('section[id]');
+     const navD = document.querySelector('nav');
 
-  },
-  data(){
-    return{
-      
+        if(!modeL) {return !1}
+
+    //  modeL.addEventListener('change', ()=> {
+         for(let i=0; i<sections.length; i++){
+           if(!sections[i].classList.contains('darkmode')){
+            sections[i].classList.add('darkmode')
+            navD.classList.add('darkmode');
+           }else{
+             sections[i].classList.remove('darkmode');
+             navD.classList.remove('darkmode');
+           }
+          
+         }
+    //  })
     }
-  }
+   
+    
+  },
+
 }
 </script>
 
@@ -75,12 +106,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #F6F6F6;
-   background-color: #0C0C0C;
- 
 
-  /* margin-top: 60px; */
-  /* cursor: url(./assets/cursor.png),auto; */
 }
 #app.active {
     color: #0C0C0C;
@@ -92,7 +118,6 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-thumb {
   /* background-color: #0c0c0c; */
   background-color: #8FE948;
-  
 }
 
 html::-webkit-scrollbar-track {
@@ -102,4 +127,80 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-thumb:window-inactive {
     background: #2152FF; 
 }
+section{
+  color: #F6F6F6;
+   background-color: #0C0C0C;
+     transition: all 0.3s;
+}
+section.darkmode{
+  background-color: #f6f6f6;
+  color: #0C0C0C;
+  transition: all 0.3s;
+}
+#modeL{
+  display:none
+}
+.modeLight{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  margin-left: 75px;
+  width: 58px;
+  height: 32px;
+  background-color: #F6F6F6;
+  border-radius: 80px;
+  transition: background 200ms cubic-bezier(.445,.05,.55,.95);
+}
+.modeBtn{
+  position: fixed;
+  right: 60%;
+  top:10%;
+}
+.modeLight:before, .modeLight:after{
+  margin-top: 5px;
+}
+.modeLight::before{
+  content:'LIGHT';
+  position: absolute;
+  left: -95px;
+  color: #8FE948;
+}
+.modeLight::after{
+  content: 'DARK';
+  position: absolute;
+  right: -90px;
+}
+.modeHandle{
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top:2px; left: 0;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 2;
+  background-color: #8FE948;
+  box-shadow: none;
+  background-size: 0;
+  transition: transform .5s;
+  }
+  #modeL:checked+.modeLight{
+    background-color: rgb(124, 124, 124);
+  }
+  #modeL:checked+.modeLight::before{
+    color:var(--check-color)
+  }
+  #modeL:checked+.modeLight::after{
+    color:#2152FF;
+  }
+  #modeL:checked+.modeLight .modeHandle{
+    width: 28px;
+  height: 28px;
+    border-radius: 50%;
+    display: inline-block;
+    transform:translate3d(28px, 0, 0) rotate(0);
+    background:#2152FF;
+    color: #2152FF;
+  }
+
+
 </style>

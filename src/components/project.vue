@@ -1,6 +1,6 @@
 <template>
 <section id="project" class="fixH" :class="{ active : turnMode }">
-  <div class="project_wrap sectionP">
+  <div class="project_wrap sectionP" >
     <div class="pjt_left">
       <h1>[ PROJECT ]</h1>
     </div>
@@ -106,6 +106,7 @@ export default {
   width: 100%;
   height: auto;
   min-height: 100vh;
+  padding-bottom: 15%;
 }
 
  .project_wrap{
@@ -149,10 +150,12 @@ export default {
 }
 .pjt_cont_wrap .pjt_cont_txt{
   width:100%;
-  border: 1px solid #fff;
+  border: 1px solid #F6F6F6;
   padding: 30px;
   box-sizing: border-box;
-
+}
+#project.darkmode .pjt_cont_wrap .pjt_cont_txt{
+   border: 1px solid #0c0c0c;
 }
  .pjt_cont_wrap .pjt_cont_txt p{
   font-size: 18px;
@@ -186,12 +189,15 @@ export default {
 }
  .pjt_cont_txt .pjt_txt_right .pjt_btn{
   width: 150px; height: 45px;
-  border: 1px solid #fff;
+  border: 1px solid #F6F6F6;
   margin-bottom: 20px;
   padding-right: 20px;
   text-align: center;
   line-height: 45px;
   font-size: 15px;
+}
+#project.darkmode .pjt_cont_txt .pjt_txt_right .pjt_btn{
+  border: 1px solid #0c0c0c;
 }
 
  .pjt_cont_txt span{
@@ -230,6 +236,10 @@ export default {
   color: #0C0C0C;
   border: 1px solid transparent !important;
 }
+ #project.darkmode .active.pjt_btn_github{
+  background-color: #0C0C0C;
+  color: #F6F6F6;
+ }
 /* 프로젝트2번째 */
 #project .pjt_cont_wrap .pjt_cont_propa{
   padding-bottom: 18%;
@@ -255,7 +265,6 @@ export default {
   position: relative;
   background-image: url(../assets/space-bnr.png);
   padding-top: 5%;
-  margin-bottom: 15%;
 }
 #project .bjt_bnr_wrap{
   position: absolute;

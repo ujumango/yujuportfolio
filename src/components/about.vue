@@ -42,8 +42,8 @@
         <h2>CODING SKILLS</h2>
         <ul>
           <li v-for="image in iconS">
-            <div>
-               <img :src="require(`@/assets/skills/${image.img}`)" /> </div>
+            <div class="iconS">
+               <img v-if="lightMode" :src="image.imgD" /> <img v-else :src="image.img" /> </div>
               <p>{{ image.name }}</p></li>
         </ul>
       </div>
@@ -51,8 +51,8 @@
         <h2>DESIGN SKILLS</h2>
         <ul>
           <li v-for="image in iconD">
-            <div>
-               <img :src="require(`@/assets/skills/${image.img}`)" /> </div>
+            <div class="iconD">
+               <img v-if="lightMode" :src="image.imgD" />  <img v-else :src="image.img" /> </div>
               <p>{{ image.name }}</p></li>
         </ul>
       </div>
@@ -84,20 +84,21 @@ import {onMounted} from 'vue'
 export default {
   data(){
     return{
+
       iconS : [
-        {img : 'html_wht.png', name : 'HTML'},
-          {img : 'css_wht.png', name : 'CSS'},
-          {img : 'js_wht.png', name : 'JavaScript'},
-           {img : 'nodejs_wht.png', name : 'Node.js'},
-           {img : 'mysql_wht.png', name : 'MySQL'},
-           {img : 'vue_wht.png', name : 'Vue.js'},
-           {img : 'git_wht.png', name : 'Git'},
-           {img : 'github_wht.png', name : 'GitHub'},
+        {img : require(`@/assets/skills/html_wht.png`), name : 'HTML', imgD : require(`@/assets/skills/html.png`)},
+          {img : require(`@/assets/skills/css_wht.png`), name : 'CSS', imgD :require(`@/assets/skills/css.png`)},
+          {img : require(`@/assets/skills/js_wht.png`), name : 'JavaScript', imgD :require(`@/assets/skills/js.png`)},
+           {img : require(`@/assets/skills/nodejs_wht.png`), name : 'Node.js', imgD :require(`@/assets/skills/nodejs.png`)},
+           {img : require(`@/assets/skills/mysql_wht.png`), name : 'MySQL', imgD :require(`@/assets/skills/mysql.png`)},
+           {img : require(`@/assets/skills/vue_wht.png`), name : 'Vue.js', imgD :require(`@/assets/skills/vue.png`)},
+           {img : require(`@/assets/skills/git_wht.png`), name : 'Git', imgD :require(`@/assets/skills/git.png`)},
+           {img : require(`@/assets/skills/github_wht.png`), name : 'GitHub', imgD :require(`@/assets/skills/github.png`)},
       ],      
       iconD : [
-        {img : 'psd_wht.png', name : 'Photoshop'},
-          {img : 'ai_wht.png', name : 'Illustrator'},
-          {img : 'figma_wht.png', name : 'Figma'},
+        {img : require(`@/assets/skills/psd_wht.png`), name : 'Photoshop', imgD :require(`@/assets/skills/psd.png`)},
+          {img : require(`@/assets/skills/ai_wht.png`), name : 'Illustrator', imgD : require(`@/assets/skills/ai.png`)},
+          {img : require(`@/assets/skills/figma_wht.png`), name : 'Figma', imgD :require(`@/assets/skills/figma.png`)},
       ]
     }
   },
@@ -191,6 +192,8 @@ setup(){
       sec2More.addEventListener('mouseleave',()=>{
         sec2More.classList.remove('active')
       })
+
+      
   })
 
 
@@ -217,10 +220,11 @@ setup(){
     margin: 0 auto;
     padding: 20% 0;
     box-sizing: border-box;
-
-    
-
   }
+
+   #about.darkmode #about_sec1{
+      color: #0c0c0c;
+   }
   #about #about_sec1  .aboutWrap{
     width: 100%; 
     opacity: 1;
@@ -269,9 +273,8 @@ setup(){
   /* background-color: #303030; */
 } 
 #about .sec2_text_wrap{
-  color: #F6F6F6;
+  /* color: #F6F6F6; */
   text-align: left;
-
 }
 #about .sec2_text_wrap h2{
   display: inline-block;
@@ -344,6 +347,9 @@ setup(){
     transform: translateY(-80%);
   background-color: #F6F6F6;
 }
+#about.darkmode .sec3_circle div:nth-child(2){
+  background-color: #D2D2D2;
+}
 .sec3_circle.active div:nth-child(2){
   animation: movingC2 1s 0.3s 1 ease-in-out;
   animation-fill-mode: forwards;
@@ -404,17 +410,16 @@ animation-fill-mode: forwards;
   width:45%;
 }
 #about .sec3_coding ul{
-  width: 80%;
+  width: 93%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding-top: 10%;
-
   gap: 10%;
   margin: 0 auto;
 }
 #about .sec3_coding ul li{
-  width: calc((80% - 90px) /4);
+  width: calc((80% - 80px) /4);
   padding-top: 10%;
   text-align: center;
 }
@@ -444,7 +449,7 @@ animation-fill-mode: forwards;
   width:45%;
 }
 #about .sec3_design ul{
-  width: 80%;
+  width: 95%;
   display: flex;
   /* justify-content: space-between; */
   flex-wrap: wrap;

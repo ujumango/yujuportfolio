@@ -48,38 +48,31 @@ export default {
       const contact = document.querySelector('#contact');
        const scrollY = window.scrollY;
        const contactTop = contact.offsetTop;
+       const hambergers = document.querySelector('.hambergers');
        const hamberger = document.querySelectorAll('.hambergers>.hamberger');
        const gnbSide = document.querySelector('.gnbSide');
        const gnbSideul = document.querySelector('.gnbSide>ul');
        const cloning = document.querySelector('#cloning')
-
        console.log(scrollY)
        console.log('1번' + contactTop)
 
       if(scrollY >contactTop - 150){
         contact.classList.add('active');
-        gnbSide.style.backgroundColor ="#F6F6F6"
-        cloning.style.backgroundColor ="#F6F6F6"
-        gnbSide.style.boxShadow = "-1px 0px 15px 0px #0C0C0C60";
-        gnbSideul.style.color = "#0C0C0C"
-        gnbSideul.style.fontWeight = "500"
-         gnbSide.style.transition = `all 0.5s`
-        
+        gnbSide.classList.add('contDark')
+        cloning.classList.add('active');
         for(let i=0; i<hamberger.length; i++){
-        hamberger[i].style.backgroundColor ="#0C0C0C";
+          hamberger[i].classList.add('contDark');
         }
-    
+        
+   
       }else{
         contact.classList.remove('active');
-        gnbSide.style.backgroundColor ="#0C0C0C";
-        cloning.style.backgroundColor ="#0C0C0C";
-        gnbSide.style.transition = `all 0.5s`;
-        gnbSide.style.boxShadow = "-1px 0px 15px 0px #F6F6F630";
-        gnbSideul.style.color = "#F6F6F6";
-        gnbSideul.style.fontWeight = "400";
-           for(let i=0; i<hamberger.length; i++){
-          hamberger[i].style.backgroundColor ="#F6F6F6";
+        gnbSide.classList.remove('contDark')
+        cloning.classList.remove('active');
+       for(let i=0; i<hamberger.length; i++){
+          hamberger[i].classList.remove('contDark');
         }
+
        
       }
     }
@@ -92,6 +85,8 @@ export default {
   height: auto;
   /* background-color: #F6F6F6; */
   transition: all 0.5s;
+      padding-top: 5%;
+      transform: translateY(-20px);
 }
 #contact.active{
     background-color: #F6F6F6;
