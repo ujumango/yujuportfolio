@@ -43,7 +43,8 @@
         <ul>
           <li v-for="image in iconS">
             <div class="iconS">
-               <img v-if="lightMode" :src="image.imgD" /> <img v-else :src="image.img" /> </div>
+               <img v-if="lightMode" :src="image.imgD" />
+               <img v-else :src="image.img" /> </div>
               <p>{{ image.name }}</p></li>
         </ul>
       </div>
@@ -84,7 +85,8 @@ import {onMounted} from 'vue'
 export default {
   data(){
     return{
-
+        lightMode : false,
+        
       iconS : [
         {img : require(`@/assets/skills/html_wht.png`), name : 'HTML', imgD : require(`@/assets/skills/html.png`)},
           {img : require(`@/assets/skills/css_wht.png`), name : 'CSS', imgD :require(`@/assets/skills/css.png`)},
@@ -104,10 +106,18 @@ export default {
   },
 mounted() {
      window.addEventListener('scroll',this.scrllAbout)
+     window.addEventListener('onload',this.modeImg)
   },
 methods: {
+    modeImg(){
+          const about = document.querySelector('#about');
+         if(about.classList.contains('darkmode')){
+            this.lightMode = true;
+           }else{
+             this.lightMode = false;
+           }
+    },
     scrllAbout(){
-      
     const about = document.querySelector('#about');
     const zoomOut = document.querySelector('.aboutWrap');
     let out = 1;
