@@ -1,5 +1,5 @@
 <template>
-<div class="modeBtn" @change="lightM()">
+<div class="modeBtn" @change="lightM()" >
   <input type="checkbox" id="modeL">
 <label for="modeL" class="modeLight">
   <span class="modeHandle"></span>
@@ -7,7 +7,7 @@
 
   <headerV  />
   <intro id="intro" />
-  <about id="about"  />
+  <about id="about" />
   <project id="project"  />
   <toyproject id="toyproject"  />
   <cloning id="cloning"  />
@@ -27,6 +27,7 @@ import contact from './components/contact.vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import {onMounted} from 'vue'
+import {ref} from 'vue'
 
 export default {
   name: 'App',
@@ -49,13 +50,14 @@ export default {
     data(){
     return{
       lightMode : true
+     
     }
   },
   
     
     
   methods: {
-
+    
     onScroll(){
       const sections = document.querySelectorAll('section[id]');
       const scrollYs = window.pageYOffset;
@@ -81,23 +83,33 @@ export default {
         if(!modeL) {return !1}
 
     //  modeL.addEventListener('change', ()=> {
+      const about = ref("about")
          for(let i=0; i<sections.length; i++){
            if(!sections[i].classList.contains('darkmode')){
             sections[i].classList.add('darkmode')
             navD.classList.add('darkmode');
+            this.tlightMode = true
            }else{
              sections[i].classList.remove('darkmode');
              navD.classList.remove('darkmode');
+             this.lightMode = false
            }
           
          }
+      //   const about = document.querySelector('#about');
+      // if(about.classList.contains('darkmode')){
+      //   this.lightMode = true
+      // }else{
+      //   this.lightMode = false
+      // }
+    },
     //  })
     }
    
     
-  },
+  }
 
-}
+
 </script>
 
 <style>
@@ -145,39 +157,41 @@ section.darkmode{
   display: inline-block;
   position: relative;
   margin-left: 75px;
-  width: 58px;
+  width: 55px;
   height: 32px;
-  background-color: #F6F6F6;
+  background-color: #e6e6e6;
+  /* border: 1px solid #0c0c0c50; */
   border-radius: 80px;
   transition: background 200ms cubic-bezier(.445,.05,.55,.95);
 }
 .modeBtn{
   position: fixed;
-  right: 60%;
-  top:10%;
+  right: 3.3%;
+  top:12%;
+  z-index:2;
 }
 .modeLight:before, .modeLight:after{
   margin-top: 5px;
 }
 .modeLight::before{
-  content:'LIGHT';
+  /* content:'LIGHT'; */
   position: absolute;
   left: -95px;
   color: #8FE948;
 }
 .modeLight::after{
-  content: 'DARK';
+  /* content: 'DARK'; */
   position: absolute;
-  right: -90px;
+  left: -90px;
 }
 .modeHandle{
   width: 28px;
   height: 28px;
   position: absolute;
-  top:2px; left: 0;
+  top:2px; left: 1px;
   border-radius: 50%;
   display: inline-block;
-  z-index: 2;
+  z-index: 3;
   background-color: #8FE948;
   box-shadow: none;
   background-size: 0;
@@ -197,7 +211,7 @@ section.darkmode{
   height: 28px;
     border-radius: 50%;
     display: inline-block;
-    transform:translate3d(28px, 0, 0) rotate(0);
+    transform:translate3d(25px, 0, 0) rotate(0);
     background:#2152FF;
     color: #2152FF;
   }
