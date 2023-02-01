@@ -85,7 +85,7 @@
 #cloning .cloning_cont_img{
    width: 100%;
   height: auto;
-  border: 1px solid #fff;
+  border: 1px solid #f6f6f6;
   margin-bottom: 15%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -93,6 +93,9 @@
   text-align: center;
    padding: 20px;
   box-sizing: border-box;
+}
+#cloning.darkmode .cloning_cont_img{
+  border: 1px solid #0c0c0c;
 }
 #cloning .cloning_cont_img img{
     display: block;
@@ -104,6 +107,20 @@
   border: none;
   padding-top: 0;
 }
+#cloning.darkmode  .pjt_cont_txt .pjt_txt_right .pjt_btn{
+  border: 1px solid #0c0c0c;
+}
+#cloning.darkmode .btn_arrow{
+background-image: url(../assets/common/resumeBk.png);
 
+}
+@media (max-width : 1400px){
 
+#cloning .pjt_cont_txt .pjt_txt_left {
+  padding-left: 0;
+}
+#cloning .pjt_cont_txt .pjt_txt_right{
+  padding-right: 0;
+}
+}
 </style>

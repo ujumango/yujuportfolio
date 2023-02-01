@@ -85,7 +85,7 @@ export default {
   height: auto;
   /* background-color: #F6F6F6; */
   transition: all 0.5s;
-      padding-top: 5%;
+      padding-top: 1%;
       transform: translateY(-20px);
 }
 #contact.active{
@@ -95,17 +95,20 @@ export default {
 }
 .contact_title{
   width: 60%;
-  padding-top: 2%;
   box-sizing: border-box;
 }
+.contact_title h1{
+  text-align: left;
+  padding-left: 16%;
+}
 .contact_wrap{
-  width: 90%;
+  width: 95%;
   display: flex;
   height: auto;
   padding-top: 3%;
-  padding-bottom: 5%;
+  padding-bottom: 3%;
   padding-right: 5%;
-  padding-left: 16%;
+  padding-left: 12%;
   justify-content: space-between;
 }
 
@@ -113,7 +116,7 @@ export default {
   width: 48%;
   /* height: 800px; */
   text-align: left;
-  padding-top: 2%;
+  /* padding-top: 2%; */
 }
 .contact_left h3{
 display: inline-block;
@@ -126,12 +129,18 @@ display: inline-block;
   background-color: #2152FF;
   animation: underbar 2s ease-in-out;
 }
+#contact.darkmode .contact_left h3.phone::after{
+   background-color: #1740d1;
+}
 .contact_left h3.email::after{
   display: block;
   content: '';
    height: 13px;
   background-color: #8FE948;
   animation: underbar 2s ease-in-out;
+}
+#contact.darkmode .contact_left h3.email::after{
+  background-color: #8dde4e;
 }
 @keyframes underbar{
     0% {width:0%;}
@@ -156,6 +165,7 @@ display: inline-block;
   width: 450px; height: 450px;
   border-radius: 50%;
   background-color: #D2D2D2;
+  background-size: cover;
   background-image: url(../assets/about/profile-2.png);
 }
 #contact .flow_text{
@@ -189,5 +199,27 @@ display: inline-block;
       -webkit-transform: translate3d(-100%, 0, 0);
       transform: translate3d(-100%, 0, 0);
     }
+  }
+
+  @media (max-width : 1400px){
+    
+  .contact_wrap{
+  width: 100%;
+  padding-left: 12%;
+   } 
+  
+  #cloning .cloning_cont_img{
+    padding: 10px;
+  }
+  #contact .contact_prof_img{
+  width: 400px; height: 400px;
+  } 
+  }
+  @media (max-width : 1200px){
+    
+  #contact .contact_prof_img{
+  width: 350px; height: 350px;
+  }
+ 
   }
 </style>

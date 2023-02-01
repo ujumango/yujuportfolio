@@ -1,13 +1,13 @@
 <template>
 <div class="modeBtn" @change="lightM()" >
-  <input type="checkbox" id="modeL">
+<input type="checkbox" id="modeL">
 <label for="modeL" class="modeLight">
-  <span class="modeHandle"></span>
+<span class="modeHandle"></span>
   </label></div>
 
   <headerV  />
   <intro id="intro" />
-  <about id="about" />
+  <about id="about" :value="lightMode" />
   <project id="project"  />
   <toyproject id="toyproject"  />
   <cloning id="cloning"  />
@@ -49,7 +49,7 @@ export default {
   },
     data(){
     return{
-      lightMode : true
+      lightMode : null
      
     }
   },
@@ -57,7 +57,14 @@ export default {
     
     
   methods: {
-    
+    // lightMod(){
+    //      const about = document.querySelector('#about');
+    //      if(about.classList.contains('darkmode')){
+    //        this.lightMode = true
+    //        }else{
+    //         this.lightMode = false
+    //         }
+    // },
     onScroll(){
       const sections = document.querySelectorAll('section[id]');
       const scrollYs = window.pageYOffset;
@@ -87,23 +94,20 @@ export default {
          for(let i=0; i<sections.length; i++){
            if(!sections[i].classList.contains('darkmode')){
             sections[i].classList.add('darkmode')
-            navD.classList.add('darkmode');
-            this.tlightMode = true
+            navD.classList.add('darkmode'); 
+            this.lightMode = true
+          
            }else{
              sections[i].classList.remove('darkmode');
              navD.classList.remove('darkmode');
              this.lightMode = false
+        
            }
           
          }
-      //   const about = document.querySelector('#about');
-      // if(about.classList.contains('darkmode')){
-      //   this.lightMode = true
-      // }else{
-      //   this.lightMode = false
-      // }
+   
     },
-    //  })
+ 
     }
    
     
@@ -118,6 +122,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  background-color: #F6F6F6
 
 }
 #app.active {
@@ -159,7 +164,7 @@ section.darkmode{
   margin-left: 75px;
   width: 55px;
   height: 32px;
-  background-color: #e6e6e6;
+  background-color: rgb(124, 124, 124);
   /* border: 1px solid #0c0c0c50; */
   border-radius: 80px;
   transition: background 200ms cubic-bezier(.445,.05,.55,.95);
@@ -168,19 +173,21 @@ section.darkmode{
   position: fixed;
   right: 3.3%;
   top:12%;
-  z-index:2;
+  z-index:1;
 }
 .modeLight:before, .modeLight:after{
   margin-top: 5px;
 }
 .modeLight::before{
-  /* content:'LIGHT'; */
+  display: block;
+  /* content:'DARK'; */
   position: absolute;
   left: -95px;
   color: #8FE948;
 }
 .modeLight::after{
-  /* content: 'DARK'; */
+  display: none;
+  /* content: 'LIGHT'; */
   position: absolute;
   left: -90px;
 }
@@ -193,18 +200,25 @@ section.darkmode{
   display: inline-block;
   z-index: 3;
   background-color: #8FE948;
+  background-image: url(assets/dark3.png);
+  background-size: 20px auto;
+  background-repeat: no-repeat;
+  background-position: center center;
   box-shadow: none;
-  background-size: 0;
+  /* background-size: 0; */
   transition: transform .5s;
   }
   #modeL:checked+.modeLight{
-    background-color: rgb(124, 124, 124);
+    background-color: #e6e6e6;
   }
   #modeL:checked+.modeLight::before{
+    display: none;
     color:var(--check-color)
   }
   #modeL:checked+.modeLight::after{
+    display: block;
     color:#2152FF;
+
   }
   #modeL:checked+.modeLight .modeHandle{
     width: 28px;
@@ -214,6 +228,15 @@ section.darkmode{
     transform:translate3d(25px, 0, 0) rotate(0);
     background:#2152FF;
     color: #2152FF;
+    background-image: url(assets/light.png);
+    background-size: 20px auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  @media (max-width : 1300px){
+    .modeBtn{
+      right: 2%;
+    }
   }
 
 

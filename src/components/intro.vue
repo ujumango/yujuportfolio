@@ -6,12 +6,12 @@
       <h1>HELLO,</h1>
       <h1>WORLD</h1>
       <div class="underbar_box"> 
-        <span :style="{paddingRight:'15px'}">[</span>
+        <span class="h1txtL">[</span>
       <span>
         <h1 class="text"></h1>
       <div class="underbar"></div>
       </span>
-      <span :style="{paddingLeft:'15px'}">]</span>
+      <span class="h1txtR">]</span>
       
       </div>
     </div>
@@ -96,13 +96,18 @@ setInterval(blink, 500) //blink 함수를 0.5초마다 실행
 #intro h1{
   line-height: 1.3;
 }
-
+#intro .h1txtL{
+  padding-right: 15px;
+}
+#intro .h1txtR{
+  padding-left: 15px;
+}
 .intro_wrap{
   color: #F6F6F6;
   font-size:100px;
   text-align: left;
   padding-left: 10%;
-  padding-top: 15%;
+  padding-top: 13%;
 }
 .underbar_box span{
   display: inline-block;
@@ -110,9 +115,7 @@ setInterval(blink, 500) //blink 함수를 0.5초마다 실행
   color: #fff;
 }
 
-/* .underbar{
-  width: 0%;
-} */
+
 .underbar::after{
   display: block;
   content: '';
@@ -147,4 +150,19 @@ setInterval(blink, 500) //blink 함수를 0.5초마다 실행
   display: none;
 }
 
+
+@media (max-width : 1200px){
+  .intro_wrap{
+       padding-top: 250px;
+  }
+  .underbar_box h1{
+    font-size:80px;
+  }
+}
+
+@media (max-width : 1000px){
+.intro_wrap{
+ 
+  }
+}
 </style>

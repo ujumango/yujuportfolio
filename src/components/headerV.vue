@@ -70,7 +70,7 @@ nav{
 }
 nav .hambergers{
   position: fixed;
-    z-index: 3;
+  z-index: 3;
   top: 5%; right: 3.5%;
   display: flex;
   flex-direction: column;
@@ -148,7 +148,7 @@ nav .gnbSide{
   background-color: #0C0C0C;
 }
 nav .gnbSide ul{
-padding-top:35%;
+padding-top:150px;
 padding-right: 20%;
 opacity: 1;
 display: flex;
@@ -182,10 +182,12 @@ width:auto;
   background-color: transparent;
 }
 nav .gotosec.active::after{
-
   background-color: #2152FF;
   animation: underbar 0.3s ease-in-out;
   box-sizing: border-box;
+}
+nav.darkmode .gotosec.active::after{
+    background-color: #1740d1;
 }
 @keyframes underbar{
     0% {width:0%;}
@@ -195,7 +197,35 @@ nav .gotosec.active::after{
 #turnDiv{
   padding-right : 20%;
   padding-top: 10%;
-
 }
 
+
+@media (max-width : 1400px){
+nav .gnbSide ul>li{
+font-size : 36px;
+}
+}
+
+
+
+@media (max-width : 1300px){
+  nav .hambergers{
+    right: 2%;
+  }
+  nav .gotosec::after{
+  height: 10px;
+  }
+}
+
+
+
+
+@media (max-width : 1100px){
+nav .gnbSide{
+  width: 35%;
+}
+  nav .gotosec::after{
+  height: 8px;
+  }
+}
 </style>

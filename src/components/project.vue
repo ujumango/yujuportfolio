@@ -69,7 +69,7 @@
   </div>
   <div class="project_bnr">
     <div class="bjt_bnr_wrap">
-      <span class="h1txt">[</span><h1>발전</h1><span class="h1txt">]</span><h1 class="normalTxt">하는</h1> <h1>프론트엔드</h1><h1 class="normalTxt">개발자</h1>
+      <span class="h1txt">[</span><h1 class="typingW"></h1><span class="h1txt">]</span><h1 class="normalTxt">하는</h1> <h1>프론트엔드</h1><h1 class="normalTxt">개발자</h1>
     </div>
   </div>
 </section>
@@ -95,9 +95,39 @@ export default {
          })
       
         }
+
+      const letters = ['도전','발전','노력'];
+      let i = 0;
+      const letter = letters[i].split('');
+      const targets = document.querySelector('.typingW')
+      // console.log(targets)
+      console.log(letters[0])
+
+      function typing(arr){
+        if(arr.length > 0){
+          targets.textContent += arr.shift();
+          setTimeout(function() {
+            typing(arr)}, 150)
+        }
+      }
+       typing(letter);
+       
+
+        function blink(){
+        targets.classList.toggle('active');
+        }
+        setInterval(blink, 500) //blink 함수를 0.5초마다 실행
+      
+
        })
-  },
-}
+
+      //  dynamic(split);
+
+
+
+},
+  }
+
 </script>
 
 <style>
@@ -182,6 +212,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: end;
+   box-sizing: content-box;
   justify-content: space-around;
 
  
@@ -226,9 +257,19 @@ export default {
   background-color: #2152FF;
   border: 1px solid transparent !important;
 }
+/* section.darkmode .active.pjt_btn_page{
+   background-color: #1740d1; 
+} */
  .active.pjt_btn_mockup{
   background-color: #8FE948;
   border: 1px solid transparent !important;
+}
+ section.darkmode .active.pjt_btn_mockup{
+  background-color: #8dde4e;
+ }
+#project.darkmode .btn_arrow{
+background-image: url(../assets/common/resumeBk.png);
+
 }
  .active.pjt_btn_github{
   background-image: url(../assets/common/resumeBk.png);
@@ -237,6 +278,7 @@ export default {
   border: 1px solid transparent !important;
 }
  #project.darkmode .active.pjt_btn_github{
+    background-image: url(../assets/common/resume.png);
   background-color: #0C0C0C;
   color: #F6F6F6;
  }
@@ -263,8 +305,13 @@ export default {
   width:100%;
   height: 100vh;
   position: relative;
-  background-image: url(../assets/space-bnr.png);
+  background-image: url(../assets/space-bnr_dark.png);
+  background-size: cover;
   padding-top: 5%;
+ 
+}
+#project.darkmode .project_bnr{
+    background-image: url(../assets/space-bnr_light.png);
 }
 #project .bjt_bnr_wrap{
   position: absolute;
@@ -283,6 +330,55 @@ export default {
 #project .project_bnr h1{
   display: inline-block;
   padding-right: 20px;
+}
+
+.typingW{
+  position: relative;
+  display: inline-block;
+}
+.typingW::after{
+  position: absolute;
+  top: -5px; right: 2px;
+  font-weight: 400;
+  content:"|";
+  display: block;
+  width: 0px; height: 100%;
+  background-color: #fff;
+}
+.typingW.active::after{
+  display: none;
+}
+
+
+@media (max-width : 1200px){
+  .project_wrap .pjt_left{
+    width: 15%;
+  }
+  .project_wrap .pjt_right{
+    width: 75%;
+  }
+}
+
+@media (max-width : 1100px){
+  #project .bjt_bnr_wrap{
+    width: 75%;
+  }
+
+}
+
+
+
+@media (max-width : 1000px){
+.pjt_cont_txt{
+ padding: 20px;
+}
+..pjt_cont_txt .pjt_txt_left{
+  padding-left: 0;
+}
+.pjt_cont_txt .pjt_txt_right{
+  justify-content: unset;
+  align-items:unset;
+}
 }
 
 </style>
