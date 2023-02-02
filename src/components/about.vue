@@ -39,10 +39,10 @@
         </div>
     <div id="about_sec3" class="sWrap">
       <div class="sec3_circle">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div  data-aos="fade-up" data-aos-delay="10"  data-aos-duration="500"></div>
+      <div  data-aos="fade-up" data-aos-delay="30"  data-aos-duration="800"></div>
+      <div  data-aos="fade-up" data-aos-delay="50"  data-aos-duration="1000"></div>
+      <div  data-aos="fade-up" data-aos-delay="70"  data-aos-duration="1200"></div>
       </div>
     <div class="sec3_cont">
       <div class="sec3_coding" data-aos="fade-up" data-aos-delay="50"  data-aos-duration="1200">
@@ -123,18 +123,22 @@ methods: {
     let out = 1;
     const scrollY = window.scrollY;
     const about = document.querySelector('#about');
+    const sec2Left = document.querySelector('.sec2_left');
     const aboutT = about.offsetTop;
+    const sec2LeftT = sec2Left.offsetTop;
     const circlrWrap = document.querySelector('.sec3_circle')
     // console.log(about);
     // console.log(aboutTop);
     console.log(scrollY);
     console.log('오프셋은' + aboutT);
+    console.log('섹션2오프셋은' + sec2LeftT);
+    //오프셋은 852
     //  console.log(e.deltaY)
     //deltaY는 100씩 움직인다
-    if(scrollY < 1180 ){
+    if(scrollY < aboutT + 300 ){
       zoomOut.style.position = 'absolute'
     }
-     if(scrollY >= 1180 && scrollY < 2500){
+     if(scrollY >= aboutT + 300 && scrollY < aboutT + 1450){
         window.addEventListener("wheel", function(e) {
         zoomOut.style.transform = `scale(${(0.4)})`;
         zoomOut.style.transition = `all 0.5s`
@@ -144,7 +148,7 @@ methods: {
         zoomOut.style.transform =  `scale(${(out)})`;
         zoomOut.style.transition = `all 0.5s`
       }
-  if(scrollY > 1200 && scrollY < 1650){
+  if(scrollY > aboutT + 350 && scrollY < sec2LeftT - 200){
         zoomOut.style.position = 'fixed'
         zoomOut.classList.add('active')
          zoomOut.style.top = '0'
@@ -156,7 +160,7 @@ methods: {
       zoomOut.classList.remove('active')
   }
   
-  if(scrollY > 1690  && scrollY < 3600){
+  if(scrollY > sec2LeftT - 200  && scrollY < 3600){
         zoomOut.style.opacity = '0'
       //  zoomOut.style.position = 'absolute'
       zoomOut.classList.remove('active')
@@ -181,7 +185,7 @@ methods: {
     zoomOut.style.display = 'block'
   }
   
-  if(scrollY >= 2500){
+  if(scrollY >= sec2LeftT + 400){
     circlrWrap.classList.add('active')
   }else{
     circlrWrap.classList.remove('active')
@@ -273,9 +277,9 @@ section.darkmode .underbar::after{
    background-color: #1740d1;
 }
 #about .underline::after{
-   display: block;
+  display: block;
   content: '';
-   height: 13px;
+  height: 13px;
   background-color: #9AEF58;
   animation: underbar 2s ease-in-out;
 }
@@ -291,9 +295,12 @@ section.darkmode .underbar::after{
   }
 #about #about_sec2{
   width:100%;
+  max-width: 1650px;
   height: 100vh;
   display: flex;
   justify-content: space-between;
+  /* padding-right: 10%;
+  padding-left: 10%; */
   padding-top: 20%;
   padding-bottom: 5%;
   /* background-color: #303030; */
@@ -331,12 +338,15 @@ section.darkmode .underbar::after{
 #about.darkmode .sec2_profile_img{
 background-color: #8dde4e;
 }
+#about.darkmode .sec2_text_wrap p{
+  font-size: 28px;
+}
 #about .sec2_more{
-  width: 35%; height: 40px;
+  width: 45%; height: 40px;
   line-height: 40px;
   display: block;
   /* text-align: right; */
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 300;
   padding-right: 45px;
   padding-top: 20px;
@@ -356,31 +366,46 @@ background-color: #8dde4e;
 
 #about #about_sec3{
   width: 100%; height: 100vh;
-  padding-top: 10%;
-  padding-bottom: 10%;
+  padding-top: 15%;
+  margin-bottom: 10%;
+    position:relative;
 }
 #about #about_sec3 .sec3_circle{
   display: flex;
   justify-content: space-between;
+  top:-10%;
 }
 
 .sec3_circle div:first-child{
+   position:absolute;
+   top:-5%;
   width: 240px; height: 240px;
   border-radius: 50%;
-  transform: translateY(-80%);
   background-color: #9AEF58;
+  /* opacity: 0; */
 }
 .section.darkmode .sec3_circle div:first-child{
    background-color: #8dde4e;
+ 
 }
 .sec3_circle.active div:first-child{
+ 
   animation: movingC 1s 1 ease-in-out;
   animation-fill-mode: forwards;
 }
+@keyframes movingC {
+  0% { top : 0;}
+  45%{ top : 85%;}
+  70%{top : 78%;}
+  100% { top : 85%;}
+}
 .sec3_circle div:nth-child(2){
+  position:absolute;
+  top:-10%;   top:-8%;
+  left:35%;
   width: 115px; height: 115px;
   border-radius: 50%;
-    transform: translateY(-80%);
+    /* transform: translateY(-80%); */
   background-color: #F6F6F6;
 }
 section.darkmode .sec3_circle div:nth-child(2){
@@ -390,10 +415,18 @@ section.darkmode .sec3_circle div:nth-child(2){
   animation: movingC2 1s 0.3s 1 ease-in-out;
   animation-fill-mode: forwards;
 }
+@keyframes movingC2 {
+  0% { top : 0;}
+  45%{ top : 95%;}
+  70%{top : 88%;}
+  100% { top : 95%;}
+}
 .sec3_circle div:nth-child(3){
+  position:absolute;
+  left:55%;   top:-8%;
   width: 165px; height: 165px;
   border-radius: 50%;
-  transform: translateY(-80%);
+  /* transform: translateY(-80%); */
   background-color: #9AEF58;
 }
 section.darkmode .sec3_circle div:nth-child(3){
@@ -403,10 +436,17 @@ section.darkmode .sec3_circle div:nth-child(3){
   animation: movingC3 1s 0.5s 1 ease-in-out;
   animation-fill-mode: forwards;
 }
+@keyframes movingC3 {
+  0% { top : 0;}
+  45%{ top : 92%;}
+  70%{top : 85%;}
+  100% { top : 92%;}
+}
 .sec3_circle div:last-child{
+   position:absolute;
+  right: 10%;  top:-5%;
   width: 290px; height: 290px;
   border-radius: 50%;
-  transform: translateY(-80%);
   background-color: #2152FF;
 }
 section.darkmode .sec3_circle div:last-child{
@@ -416,36 +456,17 @@ section.darkmode .sec3_circle div:last-child{
 animation: movingC4 1s 0.8s 1 ease-in-out;
 animation-fill-mode: forwards;
 }
-@keyframes movingC {
-  0% { transform: translateY(-80%);}
-  45%{ transform: translateY(310%);}
-  70%{ transform: translateY(235%);}
-  100% { transform: translateY(310%);}
-}
-@keyframes movingC2 {
-  0% { transform: translateY(-80%);}
-  45%{ transform: translateY(755%);}
-  70%{ transform: translateY(600%);}
-  100% { transform: translateY(755%);}
-}
-@keyframes movingC3 {
-  0% { transform: translateY(-80%);}
-  45%{ transform: translateY(497%);}
-  70%{ transform: translateY(470%);}
-  100% { transform: translateY(497%);}
-}
 @keyframes movingC4 {
-  0% { transform: translateY(-80%);}
-  45%{ transform: translateY(240%);}
-  70%{ transform: translateY(215%);}
-  100% { transform: translateY(240%);}
+  0% { top : 0;}
+  45%{ top : 80%;}
+  70%{top : 78%;}
+  100% { top : 80%;}
 }
-
 #about .sec3_cont{
   display: flex;
   position: relative;
   justify-content: space-between;
-  top: -20%;
+  top: -15%;
 }
 #about .sec3_coding{
   width:45%;
@@ -521,8 +542,9 @@ animation-fill-mode: forwards;
 }
 #about #about_sec4{
   width: 100%;
-  height: 100vh;
-  padding: 20% 0;
+  /* height: 100vh; */
+  padding: 5% 0;
+  margin-bottom: 10%;
   box-sizing: border-box;
 }
 
@@ -569,10 +591,11 @@ animation-fill-mode: forwards;
 
 .sec2_more_cont .closeBtn{
   position: absolute;
-  top: 10px;
-    left: 50%;
+  top: 15px;
+  left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
+  font-weight: bold;
 }
 
 
@@ -582,6 +605,9 @@ animation-fill-mode: forwards;
   }
 }
 @media (max-width : 1600px){
+  #about #about_sec1{
+    min-height: 500px;
+  }
  .sec2_more_cont img{
     width: 34%;
   }
@@ -592,16 +618,30 @@ animation-fill-mode: forwards;
 
 
 @media (max-width : 1400px){
+  #about #about_sec2{
+  padding-bottom: 5%;
+  height: auto;
+  }
   #about .sec2_more{
+     width: 35%; 
     font-size: 18px;
   }
   #about .sec2_profile_img{
     width: 400px;
     height: 400px;
   }
+  #about .sec3_cont{
+    top : -10%;
+  }
   .sec2_more_cont img{
     width: 39%;
   }
+  #about #about_sec3{
+    padding-top: 15%;
+    margin-bottom:0;
+    margin-top: 5%;
+  }
+  
   #about .sec3_coding ul li p{
   font-size: 18px;
 }
@@ -620,7 +660,9 @@ animation-fill-mode: forwards;
 .sec3_circle div:last-child{
   width: 240px; height: 240px;
   }
-
+#about #about_sec4{
+  padding: 10% 0;
+}
 }
 
 
@@ -638,6 +680,11 @@ animation-fill-mode: forwards;
   }
   #about .sec2_more{
     font-size: 16px;
+  }
+  #about #about_sec3{
+    height: 100%;
+    padding-top:13%;
+    padding-bottom:12%;
   }
   .sec3_circle div:first-child{
   width: 150px; height: 150px;
@@ -660,6 +707,23 @@ animation-fill-mode: forwards;
  .sec2_more_cont img{
     width: 47%;
   }
+  #about #about_sec4{
+    padding: 15% 0;
+  }
+}
+
+@media (max-width : 1000px){
+#about #about_sec2{
+  padding-right: 8%;
+  padding-left:8%;
+  padding-bottom:10%;
+
+}
+#about .sec2_more{
+  width: 40%;
+  background-size: 18px auto;
+
+}
 }
 
 </style>

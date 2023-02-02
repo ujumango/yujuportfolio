@@ -122,5 +122,14 @@ background-image: url(../assets/common/resumeBk.png);
 #cloning .pjt_cont_txt .pjt_txt_right{
   padding-right: 0;
 }
+  #cloning .cloning_cont_img{
+      margin-bottom: 10%;
+  }
 }
+@media (max-width : 1000px){
+#cloning .pjt_cont_wrap .pjt_cont_txt{
+  padding: 10px;
+}
+}
+
 </style>

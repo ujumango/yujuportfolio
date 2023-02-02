@@ -23,6 +23,7 @@ import toyproject from './components/toypro.vue'
 import cloning from './components/cloning.vue'
 import contact from './components/contact.vue'
 
+
 //AOS
 import AOS from 'aos'
 import 'aos/dist/aos.css'

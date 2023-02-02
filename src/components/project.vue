@@ -187,9 +187,9 @@ export default {
 #project.darkmode .pjt_cont_wrap .pjt_cont_txt{
    border: 1px solid #0c0c0c;
 }
- .pjt_cont_wrap .pjt_cont_txt p{
+ /* .pjt_cont_wrap .pjt_cont_txt p{
   font-size: 18px;
-}
+} */
  .pjt_cont_txt{
   width: 100%;
   display: flex;
@@ -214,6 +214,7 @@ export default {
   align-items: end;
    box-sizing: content-box;
   justify-content: space-around;
+  height: fit-content;
 
  
 
@@ -361,7 +362,7 @@ background-image: url(../assets/common/resumeBk.png);
 
 @media (max-width : 1100px){
   #project .bjt_bnr_wrap{
-    width: 75%;
+    width: 65%;
   }
 
 }

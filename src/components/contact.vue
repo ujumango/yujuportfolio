@@ -116,7 +116,7 @@ export default {
   width: 48%;
   /* height: 800px; */
   text-align: left;
-  /* padding-top: 2%; */
+  padding-top: 2%;
 }
 .contact_left h3{
 display: inline-block;
@@ -202,7 +202,6 @@ display: inline-block;
   }
 
   @media (max-width : 1400px){
-    
   .contact_wrap{
   width: 100%;
   padding-left: 12%;
@@ -220,6 +219,39 @@ display: inline-block;
   #contact .contact_prof_img{
   width: 350px; height: 350px;
   }
- 
+ .contact_right{
+  justify-content: unset;
+ }
   }
+
+  
+  @media (max-width : 1200px){
+    #contact{
+      padding-top: 10%;
+      padding-bottom: 5%;
+    }
+  }
+
+  @media  (max-width : 1200px){
+ .contact_wrap {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  .contact_bottom{
+    padding-top: 5%;
+  }
+  }
+
+    @media  (max-width : 900px){
+ .contact_wrap {
+    padding-top:10%;
+  }
+  .contact_left{
+     padding-top: 5%;
+  }
+  .contact_bottom{
+    padding-top: 5%;
+  }
+  }
+ 
 </style>

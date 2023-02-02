@@ -1,9 +1,6 @@
 body {
 	line-height: 1.6;
 }
-
-
-
 h1 {
   font-size: 90px;
 }
@@ -15,6 +12,10 @@ h3 {
 }
 h4{
   font-size: 36px;
+}
+p{
+  font-size: 22px;
+  font-weight: 400;
 }
 
 .sWrap{
@@ -35,16 +36,19 @@ box-sizing: border-box;
   font-size: 96px;
 }
 
-
+/* 
 p{
   font-size: 32px;
   font-weight: 400;
-}
+} */
 a{
   text-decoration: none;
   color: inherit;
 }
-
+.toy_common{
+  padding: 20px;
+  box-sizing: border-box;
+}
 
 @media (max-width : 1400px){
   h1 {
@@ -60,12 +64,15 @@ a{
     font-size: 30px;
   }
   p{
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 400;
   }
   .sWrap{
     padding: 0 5%;
     box-sizing: border-box;
+    }
+    .h1txt{
+      font-size: 85px;
     }
 }
 
@@ -86,11 +93,14 @@ a{
     font-size: 18px;
     font-weight: 400;
   }
+  .h1txt{
+    font-size: 65px;
+  }
 }
 
 @media (max-width : 1000px){
   h1 {
-    font-size: 62px;
+    font-size: 52px;
   }
   h2 {
     font-size : 43px
@@ -104,6 +114,9 @@ a{
   p{
     font-size: 16px;
     font-weight: 400;
+  }
+  .underbar_box h1{
+    font-size: 60px;
   }
 
 }
