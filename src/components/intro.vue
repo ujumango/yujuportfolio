@@ -144,7 +144,7 @@ setInterval(blink, 500) //blink 함수를 0.5초마다 실행
   content:"|";
   display: block;
   width: 0px; height: 100%;
-  background-color: #fff;
+  background-color: #F6F6F6;
 }
 .text.active::after{
   display: none;
@@ -153,16 +153,34 @@ setInterval(blink, 500) //blink 함수를 0.5초마다 실행
 
 @media (max-width : 1200px){
   .intro_wrap{
-       padding-top: 250px;
+       padding-top: 400px;
   }
   .underbar_box h1{
     font-size:80px;
   }
+  .underbar_box{
+    transform: translateY(-20%);
+  }
+  .underbar_box span{
+    font-size: 80px;
+  }
 }
 
 @media (max-width : 1000px){
-.intro_wrap{
- 
+  .underbar_box h1{
+    font-size: 70px;
+  }
+  .underbar_box span{
+    font-size: 70px;
+  }
+}
+
+@media (max-width :800px) {
+  .intro_wrap{
+    padding: 400px 5% 0 5%;
+  }
+   .underbar_box h1{
+    font-size: 60px;
   }
 }
 </style>

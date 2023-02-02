@@ -358,6 +358,9 @@ background-image: url(../assets/common/resumeBk.png);
   .project_wrap .pjt_right{
     width: 75%;
   }
+  .pjt_cont_txt{
+    gap: 20px;
+  }
 }
 
 @media (max-width : 1100px){
@@ -373,13 +376,27 @@ background-image: url(../assets/common/resumeBk.png);
 .pjt_cont_txt{
  padding: 20px;
 }
-..pjt_cont_txt .pjt_txt_left{
+.pjt_cont_txt .pjt_txt_left{
   padding-left: 0;
 }
 .pjt_cont_txt .pjt_txt_right{
   justify-content: unset;
   align-items:unset;
 }
+.pjt_cont_wrap .pjt_cont_txt{
+  padding: 20px;
 }
+}
+@media (max-width : 900px){
+.pjt_cont_txt .pjt_txt_right .pjt_btn{
+  width: 125px;
+}
+.btn_arrow{
+  background-size: 13px auto;
+background-position: bottom 50% right 30px;
+}
+}
+
+
 
 </style>

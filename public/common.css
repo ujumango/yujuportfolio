@@ -112,11 +112,26 @@ a{
     font-size: 20px;
   }
   p{
-    font-size: 16px;
-    font-weight: 400;
-  }
-  .underbar_box h1{
-    font-size: 60px;
-  }
+ 
 
+}
+
+
+@media (max-width : 800px) {
+  .h1txt {
+    font-size: 43px;
+  }  
+  h1 {
+    font-size: 45px;
+  }
+  h2 {
+    font-size : 36px
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4{
+    font-size: 18px;
+  }
+ 
 }

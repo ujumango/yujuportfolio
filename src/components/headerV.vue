@@ -5,7 +5,7 @@
       <span class="hamberger"></span>
       <span class="hamberger"></span>
       </div>
-    <!-- <div class="gnbBg"></div> -->
+    <div class="gnbBg" :class="{ active : subMenu }"></div>
     <!-- 나중에 다시 살려야 함!! 배경!! -->
     <div :class="{ active : subMenu }" class="gnbWrap">
 
@@ -167,7 +167,7 @@ nav .gnbSide ul>li{
 }
 
 nav.darkmode .gnbSide, .contDark.gnbSide{
-  background-color: #F6F6F6;
+  background-color: #efefef;
   box-shadow: -1px 0px 15px 0px #0C0C0C60;
 }
 nav.darkmode .gnbSide ul, .contDark.gnbSide ul{
@@ -226,6 +226,15 @@ nav .gnbSide{
 }
   nav .gotosec::after{
   height: 8px;
+  }
+}
+@media (max-width : 900px) {
+  nav .gnbSide{
+        width: 40%;
+  }
+  nav .gnbSide ul>li{
+    font-size: 28px;
+    padding: 10px 0;
   }
 }
 </style>

@@ -39,10 +39,10 @@
         </div>
     <div id="about_sec3" class="sWrap">
       <div class="sec3_circle">
-      <div  data-aos="fade-up" data-aos-delay="10"  data-aos-duration="500"></div>
-      <div  data-aos="fade-up" data-aos-delay="30"  data-aos-duration="800"></div>
-      <div  data-aos="fade-up" data-aos-delay="50"  data-aos-duration="1000"></div>
-      <div  data-aos="fade-up" data-aos-delay="70"  data-aos-duration="1200"></div>
+      <div  data-aos="fade-up"   data-aos-duration="200"></div>
+      <div  data-aos="fade-up"   data-aos-duration="300"></div>
+      <div  data-aos="fade-up"   data-aos-duration="500"></div>
+      <div  data-aos="fade-up"   data-aos-duration="800"></div>
       </div>
     <div class="sec3_cont">
       <div class="sec3_coding" data-aos="fade-up" data-aos-delay="50"  data-aos-duration="1200">
@@ -717,13 +717,52 @@ animation-fill-mode: forwards;
   padding-right: 8%;
   padding-left:8%;
   padding-bottom:10%;
-
+  flex-direction: column;
 }
+.sec2_right{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  padding-top:20%;
+}
+
 #about .sec2_more{
   width: 40%;
   background-size: 18px auto;
 
 }
+}
+
+@media (max-width : 800px) {
+
+  #about #about_sec2{
+    padding-bottom: 15%;
+  }
+  #about #about_sec3{
+    padding-bottom: 22%;
+  }
+  #about .sec3_cont{
+    flex-direction:column;
+    gap:10%;
+  }
+  #about .sec3_coding{
+    width:100%;
+  }
+  #about .sec3_coding ul{
+    padding-top: 3%;
+  }
+  #about .sec3_design{
+    width:100%;
+    padding-top: 20%;
+  }
+    #about .sec3_design ul{
+    padding-top: 3%;
+  }
+ .sec3_circle div:last-child{
+    width: 150px;
+    height: 150px;
+  }
+  
 }
 
 </style>

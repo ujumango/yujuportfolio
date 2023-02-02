@@ -85,7 +85,8 @@ export default {
   height: auto;
   /* background-color: #F6F6F6; */
   transition: all 0.5s;
-      padding-top: 1%;
+      padding-top: 3%;
+      padding-bottom: 2%;
       transform: translateY(-20px);
 }
 #contact.active{
@@ -251,6 +252,10 @@ display: inline-block;
   }
   .contact_bottom{
     padding-top: 5%;
+  }
+  #contact .contact_prof_img{
+    width:300px;
+    height:300px;
   }
   }
  
