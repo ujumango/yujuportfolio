@@ -14,7 +14,7 @@
       <li v-on:click="goSection" data-target="intro" class="gotosec active">INTRO</li>
       <li v-on:click="goSection" data-target="about" class="gotosec">ABOUT</li>
       <li v-on:click="goSection" data-target="project" class="gotosec">PROJECT</li>
-      <li v-on:click="goSection" data-target="toyproject" class="gotosec">JAVASCRIPT</li>
+      <li v-on:click="goSection" data-target="toyproject" class="gotosec">TOY PROJECT</li>
       <li v-on:click="goSection" data-target="cloning" class="gotosec">CLONING</li>
       <li v-on:click="goSection" data-target="contact" class="gotosec">CONTACT</li>
     </ul>
@@ -187,7 +187,7 @@ nav .gotosec.active::after{
   box-sizing: border-box;
 }
 nav.darkmode .gotosec.active::after{
-    background-color: #1740d1;
+    background-color: #8dde4e;
 }
 @keyframes underbar{
     0% {width:0%;}
@@ -235,6 +235,20 @@ nav .gnbSide{
   nav .gnbSide ul>li{
     font-size: 28px;
     padding: 10px 0;
+  }
+    nav .hambergers{
+    right: 5%; top: 3%;
+  }
+}
+
+
+@media (max-width : 650px) {
+  nav .gnbSide{
+    width: 100%;
+  }
+  nav .gnbSide ul{
+    align-items: center;
+    padding-right: 0;
   }
 }
 </style>

@@ -1,9 +1,10 @@
 <template>
-<div class="modeBtn" @change="lightM()" >
+<div class="modeBtn" @change="lightM()" :class="{ active : subMenu }" >
 <input type="checkbox" id="modeL">
 <label for="modeL" class="modeLight">
 <span class="modeHandle"></span>
-  </label></div>
+  </label>
+  </div>
 
   <headerV  />
   <intro id="intro" />
@@ -123,7 +124,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: #F6F6F6
+  background-color: #F6F6F6;
 
 }
 #app.active {
@@ -154,6 +155,9 @@ section.darkmode{
   background-color: #f6f6f6;
   color: #0C0C0C;
   transition: all 0.3s;
+}
+.blankBox{
+  padding: 30px 0;
 }
 #modeL{
   display:none
@@ -241,4 +245,10 @@ section.darkmode{
   }
 
 
+  @media (max-width : 900px){
+  .modeBtn{
+    right: 110px;
+    top: 3%;
+  }
+  }
 </style>

@@ -86,7 +86,7 @@ export default {
   /* background-color: #F6F6F6; */
   transition: all 0.5s;
       padding-top: 3%;
-      padding-bottom: 2%;
+      padding-bottom: 5%;
       transform: translateY(-20px);
 }
 #contact.active{
@@ -106,8 +106,8 @@ export default {
   width: 95%;
   display: flex;
   height: auto;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding-top: 2%;
+  padding-bottom: 1%;
   padding-right: 5%;
   padding-left: 12%;
   justify-content: space-between;
@@ -246,9 +246,13 @@ display: inline-block;
     @media  (max-width : 900px){
  .contact_wrap {
     padding-top:10%;
+    padding-left: 9%;
   }
   .contact_left{
      padding-top: 5%;
+  }
+  .contact_title h1{
+    padding-left: 10%;
   }
   .contact_bottom{
     padding-top: 5%;
@@ -258,5 +262,19 @@ display: inline-block;
     height:300px;
   }
   }
- 
+ @media (max-width : 700px) {
+  #contact{
+    padding-top: 20%;
+    padding-bottom: 17%;
+  }
+  #contact .contact_prof_img{
+    width: 270px;
+    height: 270px;
+  }
+
+ }
+
+ @media (max-width : 600px){}
+
+
 </style>

@@ -12,13 +12,13 @@
              <div class="pjt_cont_txt">
             <div class="pjt_txt_left">
               <h4>도시락통 웹크로닝</h4>
-              <p>멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 연진아 브라보 </p>
+              <p>멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 박연진 멋지다 박연진 멋지다 박연진 멋지다 박연진</p>
               <span class="pjt_txt_info">제작기간 : 2022.12.02 ~ 2022.12.24</span>
               <span>제작프로그램 : HTML, CSS, JS 등</span>
             </div>
             <div class="pjt_txt_right">
-              <div class="pjt_btn_page pjt_btn btn_arrow">
-                <a href="http://uju.dothome.co.kr/dosirock/index.html" target="_blank">자세히보기</a></div>
+              <div class="pjt_btn_page">
+                <a href="http://uju.dothome.co.kr/dosirock/index.html" target="_blank" class="pjt_btn btn_arrow">자세히보기</a></div>
         
  
             </div>
@@ -31,13 +31,13 @@
              <div class="pjt_cont_txt">
             <div class="pjt_txt_left">
               <h4>싱그러운 집 웹크로닝</h4>
-              <p>멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 연진아 브라보 </p>
+              <p>멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 박연진 멋지다 박연진 멋지다 박연진 멋지다 박연진</p>
               <span class="pjt_txt_info">제작기간 : 2022.12.02 ~ 2022.12.24</span>
               <span>제작프로그램 : HTML, CSS, JS 등</span>
             </div>
             <div class="pjt_txt_right">
-              <div class="pjt_btn_page pjt_btn btn_arrow">
-                <a href="http://uju.dothome.co.kr/green_house/index.html" target="_blank">자세히보기</a></div>
+              <div class="pjt_btn_page">
+                <a href="http://uju.dothome.co.kr/green_house/index.html"  target="_blank" class="pjt_btn btn_arrow">자세히보기</a></div>
         
             </div>
           </div>
@@ -49,13 +49,13 @@
              <div class="pjt_cont_txt">
             <div class="pjt_txt_left">
               <h4>더 리치먼드 평창 웹크로닝</h4>
-              <p>멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 연진아 브라보 </p>
+              <p>멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 박연진 멋지다 박연진 멋지다 박연진 멋지다 박연진</p>
               <span class="pjt_txt_info">제작기간 : 2022.12.02 ~ 2022.12.24</span>
               <span>제작프로그램 : HTML, CSS, JS 등</span>
             </div>
             <div class="pjt_txt_right">
-              <div class="pjt_btn_page pjt_btn btn_arrow">
-                <a href="http://uju.dothome.co.kr/therichmond/index.html" target="_blank">자세히보기</a></div>
+              <div class="pjt_btn_page">
+                <a href="http://uju.dothome.co.kr/therichmond/index.html" target="_blank" class="pjt_btn btn_arrow">자세히보기</a></div>
         
             </div>
           </div>
@@ -98,8 +98,8 @@
   border: 1px solid #0c0c0c;
 }
 #cloning .cloning_cont_img img{
-    display: block;
-  width: 100%;
+  display: block;
+  width: 65%;
   box-sizing: border-box;
   margin: 0 auto;
 }

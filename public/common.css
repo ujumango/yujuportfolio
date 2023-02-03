@@ -11,10 +11,11 @@ h3 {
   font-size: 48px;
 }
 h4{
-  font-size: 36px;
+  font-size: 32px;
 }
+
 p{
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
 }
 
@@ -64,7 +65,7 @@ a{
     font-size: 30px;
   }
   p{
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 400;
   }
   .sWrap{
@@ -111,9 +112,6 @@ a{
   h4{
     font-size: 20px;
   }
-  p{
- 
-
 }
 
 
@@ -133,5 +131,58 @@ a{
   h4{
     font-size: 18px;
   }
+  p{
+    font-size: 16px;
+    font-weight: 400;
+  }
+ 
+}
+
+@media (max-width : 700px){
+  .sectionP {
+    padding: 0 5%;
+  }
+  .h1txt {
+    font-size: 38px;
+  }  
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size : 26px
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h4{
+    font-size: 17px;
+  }
+  p{
+    font-size: 15px;
+  }
+ 
+}
+
+
+@media (max-width : 500px){
+  .sectionP {
+    padding: 0 5%;
+  }
+  .h1txt {
+    font-size: 8vw;
+  }  
+  h1 {
+    font-size: 7vw;
+  }
+  h2 {
+    font-size : 26px
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h4{
+    font-size: 16px;
+  }
+
  
 }
