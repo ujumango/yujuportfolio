@@ -13,15 +13,15 @@
           <div class="pjt_cont_txt">
             <div class="pjt_txt_left">
               <h4>프로파간다 홈페이지 리뉴얼</h4>
-              <p>멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 연진아 브라보 멋지다 연진아 브라보 길게길게길게 세줄 세줄 세줄 되나요 되나요 되나요? 됩니다 </p>
+              <p>프로파간다는 시각 문화 전문지 'GRAPHIC'을 창간하기 위해 출범한 출판사로, 이제는 단행본까지 출판 범위를 확장하고 있습니다. 기존의 단순한 홈페이지를 출판사의 분위기를 살려 잡지 뿐만 아니라 다양한 도서들까지 한눈에 볼 수 있도록 하였습니다. </p>
               <span class="pjt_txt_info">제작기간 : 2022.12.02 ~ 2022.12.24</span>
               <span>제작프로그램 : HTML, CSS, JS, NODE.JS 등</span>
             </div>
             <div class="pjt_txt_right">
-              <div class="pjt_btn_page pjt_btn btn_arrow">
-                <a href="">자세히보기</a></div>
-              <div class="pjt_btn_mockup pjt_btn btn_arrow"><a href="">페이지리뷰</a></div>
-              <div class="pjt_btn_github pjt_btn btn_arrow"><a href="">깃허브</a></div>
+              <div class="pjt_btn_page">
+                <a href="" class="pjt_btn btn_arrow">자세히보기</a></div>
+              <div class="pjt_btn_mockup"><a href="" class="pjt_btn btn_arrow">페이지리뷰</a></div>
+              <div class="pjt_btn_github"><a href="" class="pjt_btn btn_arrow">깃허브</a></div>
             </div>
           </div>
         </div>
@@ -37,16 +37,16 @@
               <span>제작프로그램 : HTML, CSS, JS, NODE.JS 등</span>
             </div>
             <div class="pjt_txt_right">
-              <div class="pjt_btn_page pjt_btn btn_arrow">
-                <a href="">자세히보기</a></div>
-              <div class="pjt_btn_mockup pjt_btn btn_arrow"><a href="">페이지리뷰</a></div>
-              <div class="pjt_btn_github pjt_btn btn_arrow"><a href="">깃허브</a></div>
+              <div class="pjt_btn_page">
+                <a href="https://project-rexre.herokuapp.com/" class="pjt_btn btn_arrow" target="_blank">자세히보기</a></div>
+              <div class="pjt_btn_mockup"><a href="" class="pjt_btn btn_arrow">페이지리뷰</a></div>
+              <div class="pjt_btn_github"><a href="" class="pjt_btn btn_arrow">깃허브</a></div>
             </div>
           </div>
         </div>
-        <div class="pjt_cont_team"  data-aos="fade-up" data-aos-delay="500"  data-aos-duration="700">
+        <div class="pjt_cont_team"  data-aos="fade-up" data-aos-delay="300"  data-aos-duration="600">
           <div class="pjt_cont_img">
-            <img src="../assets/project/rexre2.png" alt="">
+            <img src="../assets/project/team.png" alt="">
           </div>
           <div class="pjt_cont_txt">
             <div class="pjt_txt_left">
@@ -56,10 +56,10 @@
               <span>제작프로그램 : HTML, CSS, JS, NODE.JS 등</span>
             </div>
             <div class="pjt_txt_right">
-              <div class="pjt_btn_page pjt_btn btn_arrow">
-                <a href="">자세히보기</a></div>
-              <div class="pjt_btn_mockup pjt_btn btn_arrow"><a href="">페이지리뷰</a></div>
-              <div class="pjt_btn_github pjt_btn btn_arrow"><a href="">깃허브</a></div>
+              <div class="pjt_btn_page">
+                <a href="https://project-busan.herokuapp.com/" class="pjt_btn btn_arrow" target="_blank">자세히보기</a></div>
+              <div class="pjt_btn_mockup"><a href="" class="pjt_btn btn_arrow">페이지리뷰</a></div>
+              <div class="pjt_btn_github"><a href="" class="pjt_btn btn_arrow">깃허브</a></div>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@
   </div>
   <div class="project_bnr">
     <div class="bjt_bnr_wrap">
-      <span class="h1txt">[</span><h1 class="typingW"></h1><span class="h1txt">]</span><h1 class="normalTxt">하는</h1> <h1>프론트엔드</h1><h1 class="normalTxt">개발자</h1>
+      <span class="h1txt">[</span><h1 class="typingW underline"></h1><span class="h1txt ">]</span><h1 class="normalTxt">하는</h1> <h1>프론트엔드</h1><h1 class="normalTxt">개발자</h1>
     </div>
   </div>
 </section>
@@ -161,12 +161,12 @@ export default {
   width: 100%;
   height: auto;
   border: 1px solid #fff;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-     padding: 20px;
+  padding: 20px;
   box-sizing: border-box;
 }
 #project .pjt_cont_wrap .pjt_cont_propa .pjt_cont_img{
@@ -174,14 +174,14 @@ export default {
 }
 #project .pjt_cont_wrap  .pjt_cont_img img{
   display: block;
-  width: 100%;
+  width: 65%;
   box-sizing: border-box;
   margin: 0 auto;
 }
 .pjt_cont_wrap .pjt_cont_txt{
   width:100%;
   border: 1px solid #F6F6F6;
-  padding: 30px;
+  padding: 20px 30px 20px 30px;
   box-sizing: border-box;
 }
 #project.darkmode .pjt_cont_wrap .pjt_cont_txt{
@@ -201,7 +201,7 @@ export default {
   padding-left: 20px;
 }
  .pjt_cont_txt .pjt_txt_left p{
-  padding-top: 20px;
+  padding-top: 15px;
 }
  .pjt_cont_txt .pjt_txt_right
 {
@@ -222,6 +222,7 @@ export default {
  .pjt_cont_txt .pjt_txt_right .pjt_btn{
   width: 150px; height: 45px;
   border: 1px solid #F6F6F6;
+  display: block;
   margin-bottom: 20px;
   padding-right: 20px;
   text-align: center;
@@ -254,31 +255,31 @@ export default {
  .active.btn_arrow{
     background-position: bottom 50% right 30px;
 }
- .active.pjt_btn_page{
+ .pjt_btn_page .active.pjt_btn{
   background-color: #2152FF;
   border: 1px solid transparent !important;
 }
 /* section.darkmode .active.pjt_btn_page{
    background-color: #1740d1; 
 } */
- .active.pjt_btn_mockup{
+ .pjt_btn_mockup .active.pjt_btn{
   background-color: #8FE948;
   border: 1px solid transparent !important;
 }
- section.darkmode .active.pjt_btn_mockup{
+ section.darkmode .pjt_btn_mockup .active.pjt_btn{
   background-color: #8dde4e;
  }
 #project.darkmode .btn_arrow{
 background-image: url(../assets/common/resumeBk.png);
 
 }
- .active.pjt_btn_github{
+ .pjt_btn_github .active.pjt_btn{
   background-image: url(../assets/common/resumeBk.png);
   background-color: #F6F6F6;
   color: #0C0C0C;
   border: 1px solid transparent !important;
 }
- #project.darkmode .active.pjt_btn_github{
+ #project.darkmode .pjt_btn_github .active.pjt_btn{
     background-image: url(../assets/common/resume.png);
   background-color: #0C0C0C;
   color: #F6F6F6;
@@ -293,12 +294,15 @@ background-image: url(../assets/common/resumeBk.png);
 #project .pjt_cont_wrap .pjt_cont_re .pjt_cont_img{
   background-image: url(../assets/project/rexreBg.png);
 }
-#project .pjt_cont_wrap .pjt_cont_dusan{
+#project .pjt_cont_wrap .pjt_cont_team .pjt_cont_img{
+  background-image: url(../assets/project/teamBg.png);
+}
+/* #project .pjt_cont_wrap .pjt_cont_dusan{
   padding-bottom: 18%;
 }
 #project .pjt_cont_wrap .pjt_cont_dusan .pjt_cont_img{
   background-image: url(../assets/project/dusanBg.png);
-}
+} */
 #project .pjt_cont_wrap .pjt_cont_team{
   padding-bottom: 20%;
 }
@@ -313,6 +317,7 @@ background-image: url(../assets/common/resumeBk.png);
 }
 #project.darkmode .project_bnr{
     background-image: url(../assets/space-bnr_light.png);
+    filter: brightness(0.8);
 }
 #project .bjt_bnr_wrap{
   position: absolute;
@@ -351,12 +356,16 @@ background-image: url(../assets/common/resumeBk.png);
 }
 
 
+
 @media (max-width : 1200px){
   .project_wrap .pjt_left{
     width: 15%;
   }
   .project_wrap .pjt_right{
     width: 75%;
+  }
+  #project .pjt_cont_wrap .pjt_cont_img img{
+    width: 100%;
   }
   .pjt_cont_txt{
     gap: 20px;
@@ -392,11 +401,69 @@ background-image: url(../assets/common/resumeBk.png);
   width: 125px;
 }
 .btn_arrow{
-  background-size: 13px auto;
-background-position: bottom 50% right 30px;
+ background-size: 13px auto;
+ background-position: bottom 50% right 30px;
+}
+ .active.btn_arrow{
+  background-position: bottom 50% right 20px;
 }
 }
 
+@media (max-width : 800px) {
+  .pjt_cont_txt span{
+  font-size: 13px;
+}
 
+}
+
+
+@media (max-width : 700px){
+  #project{
+    min-height: unset;
+  }
+.project_wrap{
+  flex-direction: column;
+}
+.project_wrap .pjt_left{
+  width: 100%; height: auto;
+  position: static;
+  transform: unset;
+  writing-mode: unset;
+  text-align: center;
+  padding-bottom: 15%;
+}
+.project_wrap .pjt_right{
+  width: 100%;
+}
+}
+
+@media (max-width : 500px) {
+  .pjt_cont_txt{
+    flex-direction: column;
+  }
+
+  .pjt_cont_txt .pjt_txt_left{
+    width: 100%;
+  }
+  .pjt_cont_txt .pjt_txt_right{
+    width: 100%;
+    flex-direction: unset;
+    justify-content: space-between;
+    gap: 15px;
+     flex-direction: column;
+  }
+  .pjt_cont_txt .pjt_txt_right .pjt_btn{
+    width: 100%;
+    font-size: 14px;
+    padding-right: 0;
+  }
+  .btn_arrow{
+    background-position: bottom 50% right 20px;
+  }
+   .active.btn_arrow{
+    background-position: bottom 50% right 12px;
+}
+
+}
 
 </style>

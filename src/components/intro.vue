@@ -91,6 +91,11 @@ setInterval(blink, 500) //blink 함수를 0.5초마다 실행
   width: 100%; height: 100%;
    min-height: 100vh;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.35)), url(../assets/space-main.jpg) center/cover no-repeat;
+    transition: all 0.3s ease-in-out;
+}
+#intro.darkmode{
+  background: linear-gradient(0deg, rgba(256, 256, 256, 0.2), rgba(256, 256, 256, 0.1)), url(../assets/space-main.jpg) center/cover no-repeat;
+  transition: all 0.3s ease-in-out;
 }
 
 #intro h1{
@@ -103,7 +108,7 @@ setInterval(blink, 500) //blink 함수를 0.5초마다 실행
   padding-left: 15px;
 }
 .intro_wrap{
-  color: #F6F6F6;
+  /* color: #F6F6F6; */
   font-size:100px;
   text-align: left;
   padding-left: 10%;
@@ -112,7 +117,7 @@ setInterval(blink, 500) //blink 함수를 0.5초마다 실행
 .underbar_box span{
   display: inline-block;
   /* font-size: 54px; */
-  color: #fff;
+  /* color: #fff; */
 }
 
 
@@ -121,8 +126,11 @@ setInterval(blink, 500) //blink 함수를 0.5초마다 실행
   content: '';
    height: 13px;
   background-color: #2152FF;
-  animation: underbar 2s
-   ease-in-out;
+  animation: underbar 2s ease-in-out;
+}
+section.darkmode .underbar::after{
+  background-color: #8dde4e;
+
 }
 @keyframes underbar{
     0% {width:0%;}
@@ -179,8 +187,43 @@ setInterval(blink, 500) //blink 함수를 0.5초마다 실행
   .intro_wrap{
     padding: 400px 5% 0 5%;
   }
+  .underbar_box{
+    transform: translateY(-30%);
+   }
    .underbar_box h1{
     font-size: 60px;
   }
+    .underbar_box span{
+    font-size: 62px;
+  }
+}
+
+@media (max-width :700px) {
+  #intro .h1txtR{
+  padding-left: 5px;
+  }
+  #intro .h1txtL{
+  padding-right: 5px;
+  }
+  .intro_wrap{
+    padding: 400px 5% 0 5%;
+  }
+   .underbar_box h1{
+    font-size: 10vw;
+  }
+    .underbar_box span{
+    font-size: 10vw;
+  }
+}
+
+@media (max-width : 600px){
+  .underbar_box{
+    transform: translateY(-40%);
+   }
+}
+@media (max-width : 400px){
+  .underbar_box{
+    transform: translateY(-50%);
+   }
 }
 </style>

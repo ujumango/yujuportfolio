@@ -71,7 +71,7 @@
       <div class="aboutWrap">
        <span class="h1txt">[</span>
       <span>
-        <h1 :style="{display:'inline-block'}" class="text" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000"> 
+        <h1 :style="{display:'inline-block'}" class="text" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"> 
       자신이 <span class="underline">물음표</span>를 가지는 일에<br>
       <span class="underbar">마침표를 찍을 수 있는 사람</span>
       </h1>
@@ -137,12 +137,12 @@ methods: {
     //deltaY는 100씩 움직인다
     if(scrollY < aboutT + 300 ){
       zoomOut.style.position = 'absolute'
+      
     }
-     if(scrollY >= aboutT + 300 && scrollY < aboutT + 1450){
+     if(scrollY >= aboutT + 300){
         window.addEventListener("wheel", function(e) {
-        zoomOut.style.transform = `scale(${(0.4)})`;
+        zoomOut.style.transform = `scale(0.4)`;
         zoomOut.style.transition = `all 0.5s`
-        // e.preventDefault();
  })  
   }else{
         zoomOut.style.transform =  `scale(${(out)})`;
@@ -152,10 +152,12 @@ methods: {
         zoomOut.style.position = 'fixed'
         zoomOut.classList.add('active')
          zoomOut.style.top = '0'
+         zoomOut.style.transition = `all 0.5s`
 
   }else {
          zoomOut.style.opacity = '0'
             zoomOut.style.top = '40%'
+            zoomOut.style.transition = `all 0.5s`
       //  zoomOut.style.position = 'absolute'
       zoomOut.classList.remove('active')
   }
@@ -180,7 +182,7 @@ methods: {
    zoomOut.style.opacity = '0'
   //  zoomOut.style.position = 'absolute'
    zoomOut.style.display = 'none'
-   zoomOut.style.top = '40%'
+  //  zoomOut.style.top = '40%'
   }else{
     zoomOut.style.display = 'block'
   }
@@ -250,7 +252,7 @@ watch: {
    #about.darkmode #about_sec1{
       color: #0c0c0c;
    }
-  #about #about_sec1  .aboutWrap{
+  #about #about_sec1 .aboutWrap{
     width: 100%; 
     opacity: 1;
   }
@@ -289,9 +291,7 @@ section.darkmode .underbar::after{
 
 @keyframes underbar{
     0% {width:0%;}
-
     100% {width: 100%;}
-
   }
 #about #about_sec2{
   width:100%;
@@ -324,7 +324,7 @@ section.darkmode .underbar::after{
   animation-fill-mode:forwards;
 }
 #about.darkmode .sec2_text_wrap h2::after{
-   background-color: #1740d1;
+   background-color: #8dde4e;
 }
 #about .sec2_profile_img{
   width: 450px;
@@ -336,7 +336,7 @@ section.darkmode .underbar::after{
   background-position: center center;
 }
 #about.darkmode .sec2_profile_img{
-background-color: #8dde4e;
+background-color: #1740d1;
 }
 #about.darkmode .sec2_text_wrap p{
   font-size: 28px;
@@ -366,7 +366,7 @@ background-color: #8dde4e;
 
 #about #about_sec3{
   width: 100%; height: 100vh;
-  padding-top: 15%;
+  padding-top: 18%;
   margin-bottom: 10%;
     position:relative;
 }
@@ -394,10 +394,10 @@ background-color: #8dde4e;
   animation-fill-mode: forwards;
 }
 @keyframes movingC {
-  0% { top : 0;}
+  0% { top : 0; opacity: 1;}
   45%{ top : 85%;}
   70%{top : 78%;}
-  100% { top : 85%;}
+  100% { top : 85%; opacity: 0.3;}
 }
 .sec3_circle div:nth-child(2){
   position:absolute;
@@ -416,10 +416,10 @@ section.darkmode .sec3_circle div:nth-child(2){
   animation-fill-mode: forwards;
 }
 @keyframes movingC2 {
-  0% { top : 0;}
+  0% { top : 0; opacity: 1;}
   45%{ top : 95%;}
   70%{top : 88%;}
-  100% { top : 95%;}
+  100% { top : 95%; opacity: 0.3;}
 }
 .sec3_circle div:nth-child(3){
   position:absolute;
@@ -437,10 +437,10 @@ section.darkmode .sec3_circle div:nth-child(3){
   animation-fill-mode: forwards;
 }
 @keyframes movingC3 {
-  0% { top : 0;}
+  0% { top : 0; opacity: 1;}
   45%{ top : 92%;}
   70%{top : 85%;}
-  100% { top : 92%;}
+  100% { top : 92%; opacity: 0.3;}
 }
 .sec3_circle div:last-child{
    position:absolute;
@@ -457,10 +457,10 @@ animation: movingC4 1s 0.8s 1 ease-in-out;
 animation-fill-mode: forwards;
 }
 @keyframes movingC4 {
-  0% { top : 0;}
+  0% { top : 0; opacity: 1;}
   45%{ top : 80%;}
   70%{top : 78%;}
-  100% { top : 80%;}
+  100% { top : 80%; opacity: 0.3;}
 }
 #about .sec3_cont{
   display: flex;
@@ -472,7 +472,7 @@ animation-fill-mode: forwards;
   width:45%;
 }
 #about .sec3_coding ul{
-  width: 93%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -511,7 +511,7 @@ animation-fill-mode: forwards;
   width:45%;
 }
 #about .sec3_design ul{
-  width: 95%;
+  width: 90%;
   display: flex;
   /* justify-content: space-between; */
   flex-wrap: wrap;
@@ -670,6 +670,9 @@ animation-fill-mode: forwards;
  .sec2_more_cont img{
     width: 40%;
   }
+  .sec3_circle div:last-child{
+    right:7%;
+  }
 }
 
 
@@ -763,6 +766,24 @@ animation-fill-mode: forwards;
     height: 150px;
   }
   
+}
+
+@media (max-width : 700px) {
+#about .sec2_text_wrap p{
+ font-size: 17px;
+}
+}
+
+@media (max-width : 500px){
+#about #about_sec1{
+  min-height: 350px;
+}
+#about #about_sec2{
+  padding-top: 40%;
+}
+#about .sec2_text_wrap p{
+ font-size: 3.5vw;
+}
 }
 
 </style>
