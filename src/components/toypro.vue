@@ -19,7 +19,7 @@
        <div class="toy_box">  
         <ul>
         <li @click="openA">투두리스트</li>
-        <li @click="openB">구구단게임</li>
+        <li @click="openB">슈팅게임</li>
         <li @click="openC">끝-말잇기</li>
         <li @click="openD">랜덤뽑기</li>
        </ul></div>
@@ -47,7 +47,7 @@ components: {
     	toy1,
       toy2,
       toy3,
-      toy4
+      toy4,
 },
 methods : {
   openA(){
@@ -78,13 +78,12 @@ methods : {
 
 #toyproject .pjt_right .toy_wrap{
   width: 100%;
-  height: calc(100vh - 90px);
 
 } 
 
 #toyproject .toy_cont {
   width: 100%;
-  height: 80%;
+  height: 100%;
   border: 1px solid #F6F6F6;
   padding: 20px;
   overflow: auto;
@@ -98,21 +97,32 @@ methods : {
     
 }
 #toyproject .toy_box{
-  width: 100%;
-  height: 20%;
-  padding-top: 20px;
+  width: 20%;
+  height: 5%;
+  /* padding-top: 20px; */
 }
 #toyproject .toy_box ul {
- width: 100%; height: 100%;
-  display: flex;
+ /* width: 100%;  */
+ height: 100%;
+  /* display: flex; */
   justify-content: space-between;
 }
 #toyproject .toy_wrap .toy_box ul li{
-  width: calc((100% - 70px)/4);
+  /* width: calc((100% - 70px)/4); */
   height: auto;
   border: 1px solid #F6F6F6;
+   display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    align-items:center;
 }
 #toyproject.darkmode .toy_wrap .toy_box ul li{
     border: 1px solid #0c0c0c;
+}
+#toyproject .pjt_right .toy_wrap{
+  display: flex;
+  flex-direction: row-reverse;
 }
 </style>

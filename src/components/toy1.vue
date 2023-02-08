@@ -79,6 +79,8 @@ export default {
   /* background-color: #f6f6f6; */
   width: 100%;
   height: 100%;
+  min-height: 700px;
+  padding: 10px 0;
  
  }
  #toy1 .input{
