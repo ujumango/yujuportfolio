@@ -15,10 +15,15 @@ export default {
 <style scoped>
   #toy2{
     width: 100%;
+  width: 100%;
+  height: 100%;
+  min-height: 700px;
+   padding: 10px 0;
     /* height: calc(100vh - 90px); */
+        background-color: rgb(223, 130, 208);
   }
   #toy2 div{
-    width: 100%;  height: 70%;
-    background-color: rgb(223, 130, 208);
+    width: 100%;  
+
   }
 </style>

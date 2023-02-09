@@ -70,11 +70,11 @@
       </div>
     </div>
   </div>
-  <!-- <div class="project_bnr">
+  <div class="project_bnr">
     <div class="bjt_bnr_wrap">
       <span class="h1txt">[</span><h1 class="typingW underline"></h1><span class="h1txt ">]</span><h1 class="normalTxt">하는</h1> <h1>프론트엔드</h1><h1 class="normalTxt">개발자</h1>
     </div>
-  </div> -->
+  </div>
 </section>
  
 </template>
@@ -99,29 +99,29 @@ export default {
       
         }
 
-      // const letters = ['도전','발전','노력'];
-      // let i = 0;
-      // const letter = letters[i].split('');
-      // const targets = document.querySelector('.typingW')
-      // // console.log(targets)
-      // console.log(letters[0])
+      const letters = ['도전','발전','노력'];
+      let i = 0;
+      const letter = letters[i].split('');
+      const targets = document.querySelector('.typingW')
+      // console.log(targets)
+      console.log(letters[0])
 
-      // function typing(arr){
-      //   if(arr.length > 0){
-      //     targets.textContent += arr.shift();
-      //     setTimeout(function() {
-      //       typing(arr)}, 150)
-      //   }
-      // }
-      //  typing(letter);
+      function typing(arr){
+        if(arr.length > 0){
+          targets.textContent += arr.shift();
+          setTimeout(function() {
+            typing(arr)}, 150)
+        }
+      }
+       typing(letter);
        
 
-      //   function blink(){
-      //   targets.classList.toggle('active');
-      //   }
-      //   setInterval(blink, 500) //blink 함수를 0.5초마다 실행
+        function blink(){
+        targets.classList.toggle('active');
+        }
+        setInterval(blink, 500) //blink 함수를 0.5초마다 실행
       
-
+      
 
        let projectImgbox = document.querySelectorAll('.propaImgbox')
        let projectImg = document.querySelectorAll('.propaImg')
@@ -149,7 +149,7 @@ export default {
        })
 
    
-      //  dynamic(split);
+   
 
 
 

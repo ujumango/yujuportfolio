@@ -11,10 +11,11 @@
       :key="todo"
        @click="complete(todo, index)"
        v-bind:class="{ completed : todo.complete }">
-      {{index +1}}.
+         <!-- {{index +1}}. -->
       <span>{{todo.dates}}</span>
-       <p>{{todo.item}}</p>
+       <p class="content">{{todo.item}}</p>
       <span @click="removeTodo(todo, index)" class="remove">삭제</span>
+    
     </li>
   </ul>
   <div></div>
@@ -81,6 +82,7 @@ export default {
   height: 100%;
   min-height: 700px;
   padding: 10px 0;
+  background-color: #f6f6f6;
  
  }
  #toy1 .input{
@@ -116,45 +118,55 @@ export default {
     width: 100%;
     margin: 0 auto;
     max-width: 1000px;
-    padding: 42px  30px;
+    padding: 42px  20px;
     box-sizing: border-box;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 36px;
+    /* gap: 36px; */
   }
   .todoul>li{
-    width:20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:90%; min-height: 50px;
     border: 1px solid #2152FF;
     color: #2152FF;
     /* background-color: #f6f6f6; */
-    padding: 15px 20px 10px 20px;
+    padding: 5px 20px;
     margin: 10px;
-    border-radius: 12%;
+    border-radius: 30px;
     box-sizing: border-box;
   }
     .todoul>li>p{
+      font-size: 18px;
       color: #2152FF;
+    }
+    .todoul .content{
+      width: 100%;
+      padding: 10px 0 20px 0;
     }
 
   .todoul h4{
     font-weight: 500;
     padding-bottom: 10px;
   }
-    .todoul p{
+    /* .todoul p{
       font-size: 24px;
-    }
+    } */
   .todoul>li>span{
     display: block;
+    width: 15%;
     padding: 5px 5px 6px 5px;
     font-size: 13px;
      color: #2152FF;
   }
   .todoul .remove{
-    width: 30%;
-    margin: 10px auto;
+    width: 10%; 
+    height: fit-content;
+    /* margin: 10px auto; */
     color: #2152FF;
     border: 1px solid #2152FF;
-     border-radius: 12%;
+     border-radius: 15px;
     
   }
 .todoul>li.completed {
@@ -168,10 +180,10 @@ export default {
   }
 
  .todoul .completed .remove{
-    width: 30%;
-    margin: 10px auto;
+    width: 10%;
+    /* margin: 10px auto; */
     color: #fff;
     border: 1px solid #fff;
-     border-radius: 12%;
+     border-radius: 15px;
   }
 </style>

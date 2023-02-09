@@ -17,11 +17,11 @@
        
        </div>
        <div class="toy_box">  
-        <ul>
-        <li @click="openA">투두리스트</li>
-        <li @click="openB">슈팅게임</li>
-        <li @click="openC">끝-말잇기</li>
-        <li @click="openD">랜덤뽑기</li>
+        <ul class="toy_button">
+        <li @click="[openA(), button()]" class="toyBtn active">투두리스트</li>
+        <li @click="[openB(), button()]" class="toyBtn">슈팅게임</li>
+        <li @click="[openC(), button()]" class="toyBtn">끝-말잇기</li>
+        <li @click="[openD(), button()]" class="toyBtn">랜덤뽑기</li>
        </ul></div>
      
       </div>
@@ -41,6 +41,10 @@ export default {
 data(){
   return{
     toyContent : 'a',
+    // bgColor1:true,
+    // bgColor2:false,
+    // bgColor3:false,
+    // bgColor4:false,
   }
 },
 components: {
@@ -50,18 +54,53 @@ components: {
       toy4,
 },
 methods : {
+  
+
   openA(){
     this.toyContent = 'a'
+    // this.bgColor1= true;
+    // this.bgColor2 = false;
+    // this.bgColor3 = false;
+    // this.bgColor4 = false;
+    
+
   },
   openB(){
     this.toyContent ='b'
+    // this.bgColor2= true;
+    // this.bgColor1 = false;
+    // this.bgColor3 = false;
+    // this.bgColor4 = false;
   },
   openC(){
     this.toyContent = 'c'
+    // this.bgColor3= true;
+    // this.bgColor1 = false;
+    // this.bgColor2 = false;
+    // this.bgColor4 = false;
   },
   openD(){
     this.toyContent = 'd'
+    // this.bgColor4= !this.bgColor4;
+    // this.bgColor1 = false;
+    // this.bgColor2 = false;
+    // this.bgColor3 = false;
+  },
+
+  button(){
+   let clk = event.currentTarget;
+   let toyBtns = document.getElementsByClassName('toyBtn')
+    for(let i=0; i<toyBtns.length; i++){
+      for(let j=0; j<toyBtns.length; j++){
+        toyBtns[j].classList.remove('active');
+      }
+      clk.classList.add('active');
+      console.log('여기에요')
+    }
+  
   }
+
+ 
 }
 
 }
@@ -91,11 +130,21 @@ methods : {
   /* background-color: #2925ffd2; */
 }
 #toyproject.darkmode .toy_cont{
-    border: 1px solid #0c0c0c;
+  border: 1px solid #0c0c0c;
 }
 #toyproject .toy_cont_wrap{
-    
+  
 }
+#toyproject .project_wrap .pjt_left {
+  width: 17%;
+}
+#toyproject .project_wrap .pjt_right{
+  width: 73%;
+}
+  #toyproject .pjt_right .toy_wrap{
+    display: flex;
+    flex-direction: row-reverse;
+  }
 #toyproject .toy_box{
   width: 20%;
   height: 5%;
@@ -117,12 +166,20 @@ methods : {
     margin-right: 30px;
     margin-bottom: 30px;
     align-items:center;
+    cursor: pointer;
 }
 #toyproject.darkmode .toy_wrap .toy_box ul li{
     border: 1px solid #0c0c0c;
 }
-#toyproject .pjt_right .toy_wrap{
-  display: flex;
-  flex-direction: row-reverse;
+#toyproject .toy_wrap .toy_box ul li.active{
+  background-color: #2152FF;
+  border: 1px solid #2152FF; 
 }
+#toyproject.darkmode .toy_wrap .toy_box ul li.active{
+  background-color: #8dde4e;
+  color: #0c0c0c;
+   border: 1px solid #8dde4e; 
+}
+
+
 </style>

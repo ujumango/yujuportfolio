@@ -127,13 +127,11 @@ methods: {
     const aboutT = about.offsetTop;
     const sec2LeftT = sec2Left.offsetTop;
     const circlrWrap = document.querySelector('.sec3_circle')
-    // console.log(about);
-    // console.log(aboutTop);
-    console.log(scrollY);
-    console.log('오프셋은' + aboutT);
-    console.log('섹션2오프셋은' + sec2LeftT);
+
+    // console.log(scrollY);
+    // console.log('오프셋은' + aboutT);
+    // console.log('섹션2오프셋은' + sec2LeftT);
     //오프셋은 852
-    //  console.log(e.deltaY)
     //deltaY는 100씩 움직인다
     if(scrollY < aboutT + 300 ){
       zoomOut.style.position = 'absolute'

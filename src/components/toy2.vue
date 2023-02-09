@@ -5,6 +5,8 @@
        <div class="box">
         <p>정지 : ESC  </p>
         <p>이어서하기 : ENTER</p>
+        <p>이동 : 방향키 ← , →</p>
+        <p>화염발사 : A</p>
        </div>
 </div>
 </template>
@@ -23,6 +25,7 @@ setup(){
 
 
   let backgroundImg = require(`@/assets/toy/background.png`);
+//   let spaceshipImg = require(`@/assets/toy/buster.png`);
   let spaceshipImg = require(`@/assets/toy/spaceship.png`);
   let gameOverImg = require(`@/assets/toy/gameover.png`);
   let enemyImg = require(`@/assets/toy/enemy.png`);
@@ -48,8 +51,7 @@ toy2.appendChild(canvas);
 //appndChild : 자식으로 붙여주라(캔바스를 자식으로 붙여주라!)
 
 //이미지 불러오는 함수
-let backgroundImage,spaceshipImage,bulletImage,enemyImage,gameOverImage;
-let gameOver = false // true면 게임이 끝남, false이면 게임 진행
+let backgroundImage,spaceshipImage,bulletImage,enemyImage,gameOverImage,pauseImage;
 let score = 0;
 let gameV = false //test
 let gameStatus = 'A' //게임 실행
@@ -85,11 +87,8 @@ function loadImage (){
     bulletImage = new Image();
     bulletImage.src = bulletImg;
 
-    // fireImage = new Image();
-    // fireImage.src = "img/fire.png"
-
-    pauseImg = new Image();
-    pauseImg.src = pauseImg;
+    pauseImage = new Image();
+    pauseImage.src = pauseImg;
 }
 
 let bulletList =[] //총알들을 저장하는 리스트(배열)
@@ -157,7 +156,7 @@ this.update = function(){
     this.y += 3 //적군의 속도 조절
 
     if(this.y >= canvas.height - 60){
-        gameOver = true;
+        // gameOver = true;
         gameStatus = 'Q';
         // console.log('gameover')
         console.log('game status  = Q')
@@ -177,11 +176,12 @@ let keysDown = {}
 function setupKeyboardListner() {
     document.addEventListener('keydown',(event)=>{
         keysDown[event.keyCode] = true
+        // console.log('지금 누른 버튼은', keysDown)
         //누른 상태에는 버튼 값 저장, 키가 떼지면 버튼 값이 사라져야 함.
     });
     document.addEventListener('keyup', (event)=>{
         delete keysDown[event.keyCode]
-        if(event.keyCode == 32){
+        if(event.keyCode == 65){
             createBullet() //총알 생성하는 함수
         }    
     });
@@ -208,10 +208,10 @@ function createEnemy(){
 //우주선 X,y 값 업데이트해서 이동
 function update() {
     if(39 in keysDown) {
-        spaceshipX += 3 //우주선의 속도
+        spaceshipX += 5 //우주선의 속도
     }// right
     if (37 in keysDown) {
-        spaceshipX -= 3
+        spaceshipX -= 5
     }// left
 
  //우주선의 좌표값이 무한대로 없데이트 되지 않고 경기장 안에서만 움직일 수 있게 하려면?
@@ -283,7 +283,7 @@ function main() {
 }else if(gameStatus == 'P'){
     gameV = true;
     console.log('P가 되면용')
-    ctx.drawImage(pauseImg,50,280,300,100)
+    ctx.drawImage(pauseImage,50,280,300,100)
 }
 }
 
@@ -345,6 +345,10 @@ pause();
           background-color: #f6f6f6;
           color: #0c0c0c;
         }
+ .box>p{
+    font-size: 16px;
+ }
+ 
 #toy2{
          display: flex;
             background-image: url(../assets/toy/bodyBg.jpg);

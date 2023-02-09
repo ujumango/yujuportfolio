@@ -53,8 +53,8 @@ export default {
        const gnbSide = document.querySelector('.gnbSide');
        const gnbSideul = document.querySelector('.gnbSide>ul');
        const cloning = document.querySelector('#cloning')
-       console.log(scrollY)
-       console.log('1번' + contactTop)
+      //  console.log(scrollY)
+      //  console.log('1번' + contactTop)
 
       if(scrollY >contactTop - 150){
         contact.classList.add('active');
