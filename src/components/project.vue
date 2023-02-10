@@ -6,7 +6,7 @@
     </div>
     <div class="pjt_right">
       <div class="pjt_cont_wrap">
-        <div class="pjt_cont_propa" data-aos="fade-up" data-aos-delay="200"  data-aos-duration="700">
+        <div class="pjt_cont_propa" data-aos="fade-up" data-aos-delay="100"  data-aos-duration="700">
           <div class="pjt_cont_img propaImgbox">
             <img src="../assets/project/propaganda2.png" class="propaImg" alt="">
           </div>
@@ -26,7 +26,7 @@
             </div>
           </div>
         </div>
-        <div class="pjt_cont_re" data-aos="fade-up" data-aos-delay="300"  data-aos-duration="700">
+        <div class="pjt_cont_re" data-aos="fade-up" data-aos-delay="200"  data-aos-duration="700">
           <div class="pjt_cont_img propaImgbox">
             <img src="../assets/project/rexre2.png" class="propaImg" alt="">
           </div>
@@ -46,7 +46,7 @@
             </div>
           </div>
         </div>
-        <div class="pjt_cont_team"  data-aos="fade-up" data-aos-delay="300"  data-aos-duration="600">
+        <div class="pjt_cont_team"  data-aos="fade-up" data-aos-delay="200"  data-aos-duration="600">
           <div class="pjt_cont_img propaImgbox">
             <img src="../assets/project/team.png" class="propaImg" alt="">
           </div>

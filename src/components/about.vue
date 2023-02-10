@@ -15,7 +15,7 @@
     </div>
 
     <div id="about_sec2" class="sWrap">
-      <div class="sec2_left" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1200">
+      <div class="sec2_left" data-aos="fade-up" data-aos-duration="1200">
         <div class="sec2_text_wrap">
           <h2>이유주 LEE YUJU</h2>
           <p>상우고등학교 졸업</p>

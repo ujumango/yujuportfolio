@@ -143,9 +143,9 @@ html::-webkit-scrollbar-track {
   background-color: #1b1b1b;
   /* border-left: 1px solid #F6F6F650; */
 }
-html::-webkit-scrollbar-thumb:window-inactive {
+/* html::-webkit-scrollbar-thumb:window-inactive{
     background: #2152FF; 
-}
+} */
 section{
   color: #F6F6F6;
    background-color: #0C0C0C;
