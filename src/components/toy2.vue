@@ -2,13 +2,20 @@
 <div id="toy2">
 
  <!-- <h4>GAME START</h4> -->
-       <div class="box">
+ <div>
+     <div class="box">
         <p>정지 : ESC  </p>
         <p>이어서하기 : ENTER</p>
         <p>이동 : 방향키 ← , →</p>
         <p>화염발사 : A</p>
        </div>
+       <div class="box2 pjt_btn_page">
+        <a href="https://velog.io/@ujusunrise/토이프로젝트-슈팅게임" target="_blank" class="pjt_btn btn_arrow">페이지리뷰</a>
+       </div>
+ </div>
+      
 </div>
+
 </template>
 
 <script>
@@ -325,11 +332,8 @@ pause();
 </script>
 
 <style scoped>
-  #toy2{
-    width: 100%;
-  }
   body{
-            width: 100%;
+      width: 100%;
             text-align: center;
             /* background-image: url(../assets/toy/bodyBg.jpg);
             background-repeat: no-repeat;
@@ -338,8 +342,18 @@ pause();
             color: aliceblue;
      
         }
+     
+    #toy2{
+             width:100%;
+                 display: flex;
+                 gap: 10%;
+                background-image: url(../assets/toy/bodyBg.jpg);
+                background-repeat: no-repeat;
+                background-size: cover; 
+                padding: 10px 0;
+    }
  .box{
-          width: 20%; height: fit-content;
+          width: 90%; height: fit-content;
           padding: 20px 0;
           margin: 50px;
           background-color: #f6f6f6;
@@ -348,15 +362,27 @@ pause();
  .box>p{
     font-size: 16px;
  }
- 
-#toy2{
-         display: flex;
-            background-image: url(../assets/toy/bodyBg.jpg);
-            background-repeat: no-repeat;
-            background-size: cover; 
-            padding: 10px 0;
-}
- canvas{    width: 90%; height: auto;
+ .box2 {
+    width: 150px; height: 45px;
+    border: 1px solid #F6F6F6;
+    background-color: #F6F6F6;
+  color:#0c0c0c;
+  display: block;
+  margin: 50px;
+  padding-right: 20px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 15px;
+ }
+ .btn_arrow {
+    display: inline-block;
+    height: 45px;
+    background-position: bottom 50% right 20px;
+    background-repeat: no-repeat;
+    background-image: url(../assets/common/resumeBk.png);
+ }
+ canvas{    
+        width: 90%; height: auto;
            display: flex;
            /* margin: 0 auto;  */
            background-color: aquamarine;

@@ -20,7 +20,8 @@
         <button class="clear-completed-btn">Clear Completed</button>
       </div>
     </div>
-    <p class="info">더블클릭 시 수정 가능!</p>
+    <p class="info">작성 : 입력 후 ENTER</p>
+    <p>더블클릭 시 수정 가능!</p>
   </div>
 
 </div>
@@ -320,7 +321,7 @@ init();
 
 
 </script>
-<style scoped>
+<style>
  #toy1{
   width: 100%;
   height: 100%;
@@ -475,8 +476,13 @@ button {
 
 p.info {
   margin-top: 18px;
+
+}
+
+#toy1 p{
+  font-size: 16px;
   text-align: center;
-  color: #ccc;
+  color: #666666;
 }
 
 

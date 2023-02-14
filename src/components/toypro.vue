@@ -21,7 +21,7 @@
         <li @click="[openA(), button()]" class="toyBtn active">투두리스트</li>
         <li @click="[openB(), button()]" class="toyBtn">슈팅게임</li>
         <li @click="[openC(), button()]" class="toyBtn">끝-말잇기</li>
-        <li @click="[openD(), button()]" class="toyBtn">랜덤뽑기</li>
+        <!-- <li @click="[openD(), button()]" class="toyBtn">랜덤뽑기</li> -->
        </ul></div>
      
       </div>

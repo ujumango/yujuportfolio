@@ -41,7 +41,7 @@
             <div class="pjt_txt_right">
               <div class="pjt_btn_page">
                 <a href="https://project-rexre.herokuapp.com/" class="pjt_btn btn_arrow" target="_blank">자세히보기</a></div>
-              <div class="pjt_btn_mockup"><a href="" class="pjt_btn btn_arrow" target="_blank">페이지리뷰</a></div>
+              <div class="pjt_btn_mockup"><a href="https://velog.io/@ujusunrise/리바이리-리뉴얼-코드리뷰" class="pjt_btn btn_arrow" target="_blank">페이지리뷰</a></div>
               <div class="pjt_btn_github"><a href="https://github.com/ujumango/rexre.git" class="pjt_btn btn_arrow" target="_blank">깃허브</a></div>
             </div>
           </div>
@@ -61,7 +61,7 @@
             <div class="pjt_txt_right">
               <div class="pjt_btn_page">
                 <a href="https://project-busan.herokuapp.com/" class="pjt_btn btn_arrow" target="_blank">자세히보기</a></div>
-              <div class="pjt_btn_mockup"><a href="" class="pjt_btn btn_arrow" target="_blank">페이지리뷰</a></div>
+              <div class="pjt_btn_mockup"><a href="https://velog.io/@ujusunrise/부산-축제위원회-리뉴얼-코드리뷰" class="pjt_btn btn_arrow" target="_blank">페이지리뷰</a></div>
               <div class="pjt_btn_github"><a href="https://github.com/ujumango/busanfestival_team.git" class="pjt_btn btn_arrow" target="_blank">깃허브</a></div>
             </div>
           </div>
